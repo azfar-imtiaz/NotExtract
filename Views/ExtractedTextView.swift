@@ -8,11 +8,36 @@
 import SwiftUI
 
 struct ExtractedTextView: View {
+    @Binding var extractedText: String
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                Spacer()
+                
+                TextEditor(text: $extractedText)
+                    .foregroundStyle(.secondary)
+                    .padding()
+                
+                Spacer()
+                
+                Button {
+                    dismiss()
+                } label: {
+                    Text("Save")
+                        .font(.system(size: 20))
+                        .bold()
+                }
+                .padding()
+                .buttonStyle(.borderedProminent)
+                
+            }
+            .navigationTitle("Extracted text")
+        }
     }
 }
 
 #Preview {
-    ExtractedTextView()
+    ExtractedTextView(extractedText: .constant("Text 1"))
 }
