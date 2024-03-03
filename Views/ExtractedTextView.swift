@@ -12,28 +12,54 @@ struct ExtractedTextView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                Spacer()
-                
-                TextEditor(text: $extractedText)
-                    .foregroundStyle(.secondary)
+        if #available(iOS 16.0, *) {
+            NavigationStack {
+                VStack {
+                    Spacer()
+                    
+                    TextEditor(text: $extractedText)
+                        .foregroundStyle(.secondary)
+                        .padding()
+                    
+                    Spacer()
+                    
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Save")
+                            .font(.system(size: 20))
+                            .bold()
+                    }
                     .padding()
-                
-                Spacer()
-                
-                Button {
-                    dismiss()
-                } label: {
-                    Text("Save")
-                        .font(.system(size: 20))
-                        .bold()
+                    .buttonStyle(.borderedProminent)
+                    
                 }
-                .padding()
-                .buttonStyle(.borderedProminent)
-                
+                .navigationTitle("Extracted text")
             }
-            .navigationTitle("Extracted text")
+        } else {
+            NavigationView {
+                VStack {
+                    Spacer()
+                    
+                    TextEditor(text: $extractedText)
+                        .foregroundStyle(.secondary)
+                        .padding()
+                    
+                    Spacer()
+                    
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Save")
+                            .font(.system(size: 20))
+                            .bold()
+                    }
+                    .padding()
+                    .buttonStyle(.borderedProminent)
+                    
+                }
+                .navigationTitle("Extracted text")
+            }
         }
     }
 }

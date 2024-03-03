@@ -16,6 +16,7 @@
 		2660D7D82B8E655700FF4716 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660D7D72B8E655700FF4716 /* HomeView.swift */; };
 		2660D7DA2B8E656200FF4716 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660D7D92B8E656200FF4716 /* CameraView.swift */; };
 		2660D7DC2B8E657200FF4716 /* CameraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660D7DB2B8E657200FF4716 /* CameraCoordinator.swift */; };
+		26E8F7012B9500E600EC40F4 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E8F7002B9500E600EC40F4 /* NoteCardView.swift */; };
 		51998DAD2E33A576183B1F88 /* Pods_Notextract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013479E12A43C9435BE3DB66 /* Pods_Notextract.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		2660D7D72B8E655700FF4716 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2660D7D92B8E656200FF4716 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		2660D7DB2B8E657200FF4716 /* CameraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCoordinator.swift; sourceTree = "<group>"; };
+		26E8F7002B9500E600EC40F4 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
 		A79E30971ABF1335812BC1B6 /* Pods-Notextract.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notextract.debug.xcconfig"; path = "Target Support Files/Pods-Notextract/Pods-Notextract.debug.xcconfig"; sourceTree = "<group>"; };
 		D4859E6CF03B199C0DC05B03 /* Pods-Notextract.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notextract.release.xcconfig"; path = "Target Support Files/Pods-Notextract/Pods-Notextract.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 				2660D7D72B8E655700FF4716 /* HomeView.swift */,
 				2660D7D92B8E656200FF4716 /* CameraView.swift */,
 				26101C6F2B8E89040064A2DB /* ExtractedTextView.swift */,
+				26E8F7002B9500E600EC40F4 /* NoteCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E8F7012B9500E600EC40F4 /* NoteCardView.swift in Sources */,
 				2660D7D82B8E655700FF4716 /* HomeView.swift in Sources */,
 				26101C702B8E89040064A2DB /* ExtractedTextView.swift in Sources */,
 				2660D7DC2B8E657200FF4716 /* CameraCoordinator.swift in Sources */,
@@ -332,6 +336,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -388,6 +393,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -413,6 +419,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,6 +452,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
