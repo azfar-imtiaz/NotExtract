@@ -17,11 +17,12 @@
 		2660D7DA2B8E656200FF4716 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660D7D92B8E656200FF4716 /* CameraView.swift */; };
 		2660D7DC2B8E657200FF4716 /* CameraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660D7DB2B8E657200FF4716 /* CameraCoordinator.swift */; };
 		26E8F7012B9500E600EC40F4 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E8F7002B9500E600EC40F4 /* NoteCardView.swift */; };
-		51998DAD2E33A576183B1F88 /* Pods_Notextract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013479E12A43C9435BE3DB66 /* Pods_Notextract.framework */; };
+		26E8F7032B9663A400EC40F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26E8F7022B9663A400EC40F4 /* GoogleService-Info.plist */; };
+		853D637FE98C39953DB36EC1 /* Pods_Notextract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23EAE427D13C67F81EFA690F /* Pods_Notextract.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		013479E12A43C9435BE3DB66 /* Pods_Notextract.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notextract.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23EAE427D13C67F81EFA690F /* Pods_Notextract.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notextract.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26101C6D2B8E6A770064A2DB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		26101C6F2B8E89040064A2DB /* ExtractedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractedTextView.swift; sourceTree = "<group>"; };
 		2660D7C42B8E651400FF4716 /* Notextract.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notextract.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,8 +34,9 @@
 		2660D7D92B8E656200FF4716 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		2660D7DB2B8E657200FF4716 /* CameraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCoordinator.swift; sourceTree = "<group>"; };
 		26E8F7002B9500E600EC40F4 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
-		A79E30971ABF1335812BC1B6 /* Pods-Notextract.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notextract.debug.xcconfig"; path = "Target Support Files/Pods-Notextract/Pods-Notextract.debug.xcconfig"; sourceTree = "<group>"; };
-		D4859E6CF03B199C0DC05B03 /* Pods-Notextract.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notextract.release.xcconfig"; path = "Target Support Files/Pods-Notextract/Pods-Notextract.release.xcconfig"; sourceTree = "<group>"; };
+		26E8F7022B9663A400EC40F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3D4E9A94A1CFA61D2FD19C07 /* Pods-Notextract.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notextract.debug.xcconfig"; path = "Target Support Files/Pods-Notextract/Pods-Notextract.debug.xcconfig"; sourceTree = "<group>"; };
+		F28264A0259478E5D66A0575 /* Pods-Notextract.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notextract.release.xcconfig"; path = "Target Support Files/Pods-Notextract/Pods-Notextract.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51998DAD2E33A576183B1F88 /* Pods_Notextract.framework in Frameworks */,
+				853D637FE98C39953DB36EC1 /* Pods_Notextract.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,13 +62,10 @@
 		2660D7BB2B8E651400FF4716 = {
 			isa = PBXGroup;
 			children = (
-				26101C6C2B8E6A690064A2DB /* ViewModels */,
-				2660D7D62B8E654800FF4716 /* Models */,
-				2660D7D52B8E654000FF4716 /* Views */,
 				2660D7C62B8E651400FF4716 /* Notextract */,
 				2660D7C52B8E651400FF4716 /* Products */,
 				A32B0478C55BCBF99E223638 /* Pods */,
-				62872E07CDA363D49341130F /* Frameworks */,
+				9C2CE672E355C2C554EE5A18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,8 +80,12 @@
 		2660D7C62B8E651400FF4716 /* Notextract */ = {
 			isa = PBXGroup;
 			children = (
+				2660D7D52B8E654000FF4716 /* Views */,
+				2660D7D62B8E654800FF4716 /* Models */,
+				26101C6C2B8E6A690064A2DB /* ViewModels */,
 				2660D7C72B8E651400FF4716 /* NotextractApp.swift */,
 				2660D7CB2B8E651700FF4716 /* Assets.xcassets */,
+				26E8F7022B9663A400EC40F4 /* GoogleService-Info.plist */,
 				2660D7CD2B8E651700FF4716 /* Preview Content */,
 			);
 			path = Notextract;
@@ -116,10 +119,10 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		62872E07CDA363D49341130F /* Frameworks */ = {
+		9C2CE672E355C2C554EE5A18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				013479E12A43C9435BE3DB66 /* Pods_Notextract.framework */,
+				23EAE427D13C67F81EFA690F /* Pods_Notextract.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,8 +130,8 @@
 		A32B0478C55BCBF99E223638 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A79E30971ABF1335812BC1B6 /* Pods-Notextract.debug.xcconfig */,
-				D4859E6CF03B199C0DC05B03 /* Pods-Notextract.release.xcconfig */,
+				3D4E9A94A1CFA61D2FD19C07 /* Pods-Notextract.debug.xcconfig */,
+				F28264A0259478E5D66A0575 /* Pods-Notextract.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -140,12 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2660D7D22B8E651700FF4716 /* Build configuration list for PBXNativeTarget "Notextract" */;
 			buildPhases = (
-				6795A8EEB50A41864524A65C /* [CP] Check Pods Manifest.lock */,
+				3AFA5EC1A44581EC2FA3BFF6 /* [CP] Check Pods Manifest.lock */,
 				2660D7C02B8E651400FF4716 /* Sources */,
 				2660D7C12B8E651400FF4716 /* Frameworks */,
 				2660D7C22B8E651400FF4716 /* Resources */,
-				B5907A1D18F157D46184F84F /* [CP] Embed Pods Frameworks */,
-				E274CA6DF83AAD598E21CD5D /* [CP] Copy Pods Resources */,
+				32810AE14DC0F899E649D00B /* [CP] Embed Pods Frameworks */,
+				9EF2007559C3DA6D781E3153 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,13 +199,31 @@
 			files = (
 				2660D7CF2B8E651700FF4716 /* Preview Assets.xcassets in Resources */,
 				2660D7CC2B8E651700FF4716 /* Assets.xcassets in Resources */,
+				26E8F7032B9663A400EC40F4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6795A8EEB50A41864524A65C /* [CP] Check Pods Manifest.lock */ = {
+		32810AE14DC0F899E649D00B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notextract/Pods-Notextract-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notextract/Pods-Notextract-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Notextract/Pods-Notextract-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AFA5EC1A44581EC2FA3BFF6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -224,24 +245,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B5907A1D18F157D46184F84F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Notextract/Pods-Notextract-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Notextract/Pods-Notextract-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Notextract/Pods-Notextract-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E274CA6DF83AAD598E21CD5D /* [CP] Copy Pods Resources */ = {
+		9EF2007559C3DA6D781E3153 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -402,7 +406,7 @@
 		};
 		2660D7D32B8E651700FF4716 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A79E30971ABF1335812BC1B6 /* Pods-Notextract.debug.xcconfig */;
+			baseConfigurationReference = 3D4E9A94A1CFA61D2FD19C07 /* Pods-Notextract.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -435,7 +439,7 @@
 		};
 		2660D7D42B8E651700FF4716 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4859E6CF03B199C0DC05B03 /* Pods-Notextract.release.xcconfig */;
+			baseConfigurationReference = F28264A0259478E5D66A0575 /* Pods-Notextract.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
