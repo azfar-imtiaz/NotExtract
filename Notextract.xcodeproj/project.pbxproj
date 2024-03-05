@@ -65,7 +65,6 @@
 		C19ABD852B9721A100103EF4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C19ABD882B975C7500103EF4 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		C19ABD8C2B975D2300103EF4 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		C19ABD8E2B976E1E00103EF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C19ABD902B976E6600103EF4 /* LeagueSpartan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeagueSpartan.ttf; sourceTree = "<group>"; };
 		C19ABD922B97716400103EF4 /* LoraItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoraItalic.ttf; sourceTree = "<group>"; };
 		C19ABD932B97716500103EF4 /* Lora.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lora.ttf; sourceTree = "<group>"; };
@@ -138,7 +137,6 @@
 				2660D7D62B8E654800FF4716 /* Models */,
 				26101C6C2B8E6A690064A2DB /* ViewModels */,
 				2660D7C72B8E651400FF4716 /* NotextractApp.swift */,
-				C19ABD8E2B976E1E00103EF4 /* Info.plist */,
 				2660D7CB2B8E651700FF4716 /* Assets.xcassets */,
 				C19ABD832B97175E00103EF4 /* GoogleService-Info.plist */,
 				2660D7CD2B8E651700FF4716 /* Preview Content */,

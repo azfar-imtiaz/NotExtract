@@ -9,12 +9,14 @@ import SwiftUI
 
 struct LoginView: View {
     @State private var logoOffsetY: CGFloat = 300
-    @State private var loginSectionOffsetY: CGFloat = 300
+    @State private var loginSectionOffsetY: CGFloat = 500
+    
+    @State private var username: String = ""
+    @State private var password: String = ""
     
     var body: some View {
         ZStack {
             Color(.ivory)
-                .ignoresSafeArea()
             
             VStack {
                 Spacer()
@@ -32,20 +34,29 @@ struct LoginView: View {
                     Text("Welcome!")
                         .font(.customFont("LeagueSpartan-Bold", size: 35))
                         .foregroundStyle(.gold)
-                        .padding(20)
+                        .padding(30)
                     
-                    TextField("Username", text: .constant(""))
+                    TextField("Username", text: $username)
+//                        .placeholder(when: username.isEmpty) {
+//                            Text("Username")
+//                                .foregroundStyle(.charcoal)
+//                        }
+                        .underlineTextField()
                         .padding()
-                        .background(.ivory)
-                        .foregroundStyle(.charcoal)
+                        .foregroundStyle(.ivory)
                         .font(.customFont("LeagueSpartan-Regular", size: 20))
                         .cornerRadius(5.0)
                         .padding(.bottom, 10)
                     
-                    SecureField("Password", text: .constant(""))
+                    SecureField("Password", text: $password)
+//                        .placeholder(when: password.isEmpty) {
+//                            Text("Password")
+//                                .foregroundStyle(.charcoal)
+//                        }
+                        .underlineTextField()
                         .padding()
-                        .background(.ivory)
-                        .foregroundStyle(.charcoal)
+                        // .background(.ivory)
+                        .foregroundStyle(.ivory)
                         .font(.customFont("LeagueSpartan-Regular", size: 20))
                         .cornerRadius(5.0)
                         .padding(.bottom, 20)
@@ -54,7 +65,7 @@ struct LoginView: View {
                         print("Login pressed!")
                     } label: {
                         Text("Login")
-                            .foregroundStyle(.black)
+                            .foregroundStyle(.charcoal)
                             .frame(width: 150)
                             .font(.customFont("LeagueSpartan-Regular", size: 20))
                             .padding()
@@ -65,7 +76,7 @@ struct LoginView: View {
                     HStack(spacing: .zero) {
                         Text("Don't have an account?")
                             .foregroundStyle(.ivory)
-                            .font(.customFont("Lora-Italic", size: 15))
+                            .font(.customFont("Lora-Regular", size: 15))
                             .padding(.trailing, 5)
                         
                         Button {
@@ -73,21 +84,21 @@ struct LoginView: View {
                         } label: {
                             Text("Sign up")
                                 .foregroundStyle(.gold)
-                                .font(.customFont("Lora-Italic", size: 15))
+                                .font(.customFont("Lora-Regular", size: 15))
                         }
-                            
                     }
-                    .padding(10)
+                    .padding(.top, 30)
+                    .padding(.bottom, 20)
                 }
                 .padding()
+                .frame(maxHeight: .infinity)
                 .background(.charcoal)
                 .roundedCorner(30, corners: [.topLeft, .topRight])
                 .offset(y: loginSectionOffsetY)
                 .animation(Animation.easeInOut.delay(1))
-                .padding(.bottom, 20)
-                                                    
             }
         }
+        .ignoresSafeArea()
         .onAppear {
             /*
             CODE SNIPPET FOR VIEWING ALL FONTS AND GETTING CORRECT NAMES
