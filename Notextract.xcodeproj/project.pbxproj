@@ -17,12 +17,36 @@
 		2660D7DA2B8E656200FF4716 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660D7D92B8E656200FF4716 /* CameraView.swift */; };
 		2660D7DC2B8E657200FF4716 /* CameraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2660D7DB2B8E657200FF4716 /* CameraCoordinator.swift */; };
 		26E8F7012B9500E600EC40F4 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E8F7002B9500E600EC40F4 /* NoteCardView.swift */; };
-		26E8F7032B9663A400EC40F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26E8F7022B9663A400EC40F4 /* GoogleService-Info.plist */; };
-		853D637FE98C39953DB36EC1 /* Pods_Notextract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23EAE427D13C67F81EFA690F /* Pods_Notextract.framework */; };
+		C19ABD842B97175E00103EF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD832B97175E00103EF4 /* GoogleService-Info.plist */; };
+		C19ABD862B9721A100103EF4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19ABD852B9721A100103EF4 /* LoginView.swift */; };
+		C19ABD892B975C7500103EF4 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19ABD882B975C7500103EF4 /* RoundedCorner.swift */; };
+		C19ABD8D2B975D2300103EF4 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19ABD8C2B975D2300103EF4 /* ViewExtension.swift */; };
+		C19ABD912B976E6600103EF4 /* LeagueSpartan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD902B976E6600103EF4 /* LeagueSpartan.ttf */; };
+		C19ABD942B97716500103EF4 /* LoraItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD922B97716400103EF4 /* LoraItalic.ttf */; };
+		C19ABD952B97716500103EF4 /* Lora.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD932B97716500103EF4 /* Lora.ttf */; };
+		C19ABDA92B97719500103EF4 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD972B97718800103EF4 /* Poppins-SemiBold.ttf */; };
+		C19ABDAA2B97719500103EF4 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD982B97718800103EF4 /* Poppins-SemiBoldItalic.ttf */; };
+		C19ABDAB2B97719500103EF4 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD992B97718900103EF4 /* Poppins-ThinItalic.ttf */; };
+		C19ABDAC2B97719500103EF4 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD9A2B97718A00103EF4 /* Poppins-BoldItalic.ttf */; };
+		C19ABDAD2B97719500103EF4 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD9B2B97718B00103EF4 /* Poppins-MediumItalic.ttf */; };
+		C19ABDAE2B97719500103EF4 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD9C2B97718B00103EF4 /* Poppins-Medium.ttf */; };
+		C19ABDAF2B97719500103EF4 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD9D2B97718C00103EF4 /* Poppins-ExtraLightItalic.ttf */; };
+		C19ABDB02B97719500103EF4 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD9E2B97718D00103EF4 /* Poppins-Regular.ttf */; };
+		C19ABDB12B97719500103EF4 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD9F2B97718E00103EF4 /* Poppins-Light.ttf */; };
+		C19ABDB22B97719500103EF4 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABDA02B97718F00103EF4 /* Poppins-ExtraBoldItalic.ttf */; };
+		C19ABDB32B97719500103EF4 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABDA12B97718F00103EF4 /* Poppins-LightItalic.ttf */; };
+		C19ABDB42B97719500103EF4 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABDA22B97719000103EF4 /* Poppins-Thin.ttf */; };
+		C19ABDB52B97719500103EF4 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABDA32B97719100103EF4 /* Poppins-Bold.ttf */; };
+		C19ABDB62B97719500103EF4 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABDA42B97719200103EF4 /* Poppins-ExtraBold.ttf */; };
+		C19ABDB72B97719500103EF4 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABDA52B97719200103EF4 /* Poppins-BlackItalic.ttf */; };
+		C19ABDB82B97719500103EF4 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABDA62B97719300103EF4 /* Poppins-Italic.ttf */; };
+		C19ABDB92B97719500103EF4 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABDA72B97719400103EF4 /* Poppins-ExtraLight.ttf */; };
+		C19ABDBA2B97719500103EF4 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C19ABDA82B97719500103EF4 /* Poppins-Black.ttf */; };
+		C19ABDBC2B9777E400103EF4 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19ABDBB2B9777E400103EF4 /* FontExtension.swift */; };
+		E20FB420CC58D74B4CE4304C /* Pods_Notextract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1DA248943B716132FC0857 /* Pods_Notextract.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		23EAE427D13C67F81EFA690F /* Pods_Notextract.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notextract.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26101C6D2B8E6A770064A2DB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		26101C6F2B8E89040064A2DB /* ExtractedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractedTextView.swift; sourceTree = "<group>"; };
 		2660D7C42B8E651400FF4716 /* Notextract.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notextract.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,9 +58,36 @@
 		2660D7D92B8E656200FF4716 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		2660D7DB2B8E657200FF4716 /* CameraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCoordinator.swift; sourceTree = "<group>"; };
 		26E8F7002B9500E600EC40F4 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
-		26E8F7022B9663A400EC40F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3D4E9A94A1CFA61D2FD19C07 /* Pods-Notextract.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notextract.debug.xcconfig"; path = "Target Support Files/Pods-Notextract/Pods-Notextract.debug.xcconfig"; sourceTree = "<group>"; };
-		F28264A0259478E5D66A0575 /* Pods-Notextract.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notextract.release.xcconfig"; path = "Target Support Files/Pods-Notextract/Pods-Notextract.release.xcconfig"; sourceTree = "<group>"; };
+		7AC7244F1F3B64AF4BC32D4B /* Pods-Notextract.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notextract.debug.xcconfig"; path = "Target Support Files/Pods-Notextract/Pods-Notextract.debug.xcconfig"; sourceTree = "<group>"; };
+		9D1DA248943B716132FC0857 /* Pods_Notextract.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notextract.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A498F46A289D7C7265082810 /* Pods-Notextract.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notextract.release.xcconfig"; path = "Target Support Files/Pods-Notextract/Pods-Notextract.release.xcconfig"; sourceTree = "<group>"; };
+		C19ABD832B97175E00103EF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C19ABD852B9721A100103EF4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C19ABD882B975C7500103EF4 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		C19ABD8C2B975D2300103EF4 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		C19ABD8E2B976E1E00103EF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C19ABD902B976E6600103EF4 /* LeagueSpartan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeagueSpartan.ttf; sourceTree = "<group>"; };
+		C19ABD922B97716400103EF4 /* LoraItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoraItalic.ttf; sourceTree = "<group>"; };
+		C19ABD932B97716500103EF4 /* Lora.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lora.ttf; sourceTree = "<group>"; };
+		C19ABD972B97718800103EF4 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		C19ABD982B97718800103EF4 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		C19ABD992B97718900103EF4 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		C19ABD9A2B97718A00103EF4 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C19ABD9B2B97718B00103EF4 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		C19ABD9C2B97718B00103EF4 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		C19ABD9D2B97718C00103EF4 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		C19ABD9E2B97718D00103EF4 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		C19ABD9F2B97718E00103EF4 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		C19ABDA02B97718F00103EF4 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		C19ABDA12B97718F00103EF4 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		C19ABDA22B97719000103EF4 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		C19ABDA32B97719100103EF4 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		C19ABDA42B97719200103EF4 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		C19ABDA52B97719200103EF4 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		C19ABDA62B97719300103EF4 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		C19ABDA72B97719400103EF4 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		C19ABDA82B97719500103EF4 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		C19ABDBB2B9777E400103EF4 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				853D637FE98C39953DB36EC1 /* Pods_Notextract.framework in Frameworks */,
+				E20FB420CC58D74B4CE4304C /* Pods_Notextract.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +116,7 @@
 				2660D7C62B8E651400FF4716 /* Notextract */,
 				2660D7C52B8E651400FF4716 /* Products */,
 				A32B0478C55BCBF99E223638 /* Pods */,
-				9C2CE672E355C2C554EE5A18 /* Frameworks */,
+				D03770EA4DD02B9B7CC64391 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,12 +131,16 @@
 		2660D7C62B8E651400FF4716 /* Notextract */ = {
 			isa = PBXGroup;
 			children = (
+				C19ABD8F2B976E5100103EF4 /* Fonts */,
+				C19ABD8A2B975CF400103EF4 /* Extensions */,
+				C19ABD872B975C6100103EF4 /* Shapes */,
 				2660D7D52B8E654000FF4716 /* Views */,
 				2660D7D62B8E654800FF4716 /* Models */,
 				26101C6C2B8E6A690064A2DB /* ViewModels */,
 				2660D7C72B8E651400FF4716 /* NotextractApp.swift */,
+				C19ABD8E2B976E1E00103EF4 /* Info.plist */,
 				2660D7CB2B8E651700FF4716 /* Assets.xcassets */,
-				26E8F7022B9663A400EC40F4 /* GoogleService-Info.plist */,
+				C19ABD832B97175E00103EF4 /* GoogleService-Info.plist */,
 				2660D7CD2B8E651700FF4716 /* Preview Content */,
 			);
 			path = Notextract;
@@ -107,6 +162,7 @@
 				2660D7D92B8E656200FF4716 /* CameraView.swift */,
 				26101C6F2B8E89040064A2DB /* ExtractedTextView.swift */,
 				26E8F7002B9500E600EC40F4 /* NoteCardView.swift */,
+				C19ABD852B9721A100103EF4 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,21 +175,90 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		9C2CE672E355C2C554EE5A18 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				23EAE427D13C67F81EFA690F /* Pods_Notextract.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		A32B0478C55BCBF99E223638 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3D4E9A94A1CFA61D2FD19C07 /* Pods-Notextract.debug.xcconfig */,
-				F28264A0259478E5D66A0575 /* Pods-Notextract.release.xcconfig */,
+				7AC7244F1F3B64AF4BC32D4B /* Pods-Notextract.debug.xcconfig */,
+				A498F46A289D7C7265082810 /* Pods-Notextract.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C19ABD872B975C6100103EF4 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				C19ABD882B975C7500103EF4 /* RoundedCorner.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
+		C19ABD8A2B975CF400103EF4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C19ABD8C2B975D2300103EF4 /* ViewExtension.swift */,
+				C19ABDBB2B9777E400103EF4 /* FontExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C19ABD8F2B976E5100103EF4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C19ABDBE2B977B5300103EF4 /* LeagueSpartan */,
+				C19ABDBD2B977A5500103EF4 /* Lora */,
+				C19ABD962B97717500103EF4 /* Poppins */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C19ABD962B97717500103EF4 /* Poppins */ = {
+			isa = PBXGroup;
+			children = (
+				C19ABDA82B97719500103EF4 /* Poppins-Black.ttf */,
+				C19ABDA52B97719200103EF4 /* Poppins-BlackItalic.ttf */,
+				C19ABDA32B97719100103EF4 /* Poppins-Bold.ttf */,
+				C19ABD9A2B97718A00103EF4 /* Poppins-BoldItalic.ttf */,
+				C19ABDA42B97719200103EF4 /* Poppins-ExtraBold.ttf */,
+				C19ABDA02B97718F00103EF4 /* Poppins-ExtraBoldItalic.ttf */,
+				C19ABDA72B97719400103EF4 /* Poppins-ExtraLight.ttf */,
+				C19ABD9D2B97718C00103EF4 /* Poppins-ExtraLightItalic.ttf */,
+				C19ABDA62B97719300103EF4 /* Poppins-Italic.ttf */,
+				C19ABD9F2B97718E00103EF4 /* Poppins-Light.ttf */,
+				C19ABDA12B97718F00103EF4 /* Poppins-LightItalic.ttf */,
+				C19ABD9C2B97718B00103EF4 /* Poppins-Medium.ttf */,
+				C19ABD9B2B97718B00103EF4 /* Poppins-MediumItalic.ttf */,
+				C19ABD9E2B97718D00103EF4 /* Poppins-Regular.ttf */,
+				C19ABD972B97718800103EF4 /* Poppins-SemiBold.ttf */,
+				C19ABD982B97718800103EF4 /* Poppins-SemiBoldItalic.ttf */,
+				C19ABDA22B97719000103EF4 /* Poppins-Thin.ttf */,
+				C19ABD992B97718900103EF4 /* Poppins-ThinItalic.ttf */,
+			);
+			path = Poppins;
+			sourceTree = "<group>";
+		};
+		C19ABDBD2B977A5500103EF4 /* Lora */ = {
+			isa = PBXGroup;
+			children = (
+				C19ABD922B97716400103EF4 /* LoraItalic.ttf */,
+				C19ABD932B97716500103EF4 /* Lora.ttf */,
+			);
+			path = Lora;
+			sourceTree = "<group>";
+		};
+		C19ABDBE2B977B5300103EF4 /* LeagueSpartan */ = {
+			isa = PBXGroup;
+			children = (
+				C19ABD902B976E6600103EF4 /* LeagueSpartan.ttf */,
+			);
+			path = LeagueSpartan;
+			sourceTree = "<group>";
+		};
+		D03770EA4DD02B9B7CC64391 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D1DA248943B716132FC0857 /* Pods_Notextract.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,12 +268,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2660D7D22B8E651700FF4716 /* Build configuration list for PBXNativeTarget "Notextract" */;
 			buildPhases = (
-				3AFA5EC1A44581EC2FA3BFF6 /* [CP] Check Pods Manifest.lock */,
+				B217905AC0D52D84DAFBD6F5 /* [CP] Check Pods Manifest.lock */,
 				2660D7C02B8E651400FF4716 /* Sources */,
 				2660D7C12B8E651400FF4716 /* Frameworks */,
 				2660D7C22B8E651400FF4716 /* Resources */,
-				32810AE14DC0F899E649D00B /* [CP] Embed Pods Frameworks */,
-				9EF2007559C3DA6D781E3153 /* [CP] Copy Pods Resources */,
+				7179E67D4AE56F0D1AFA8BD1 /* [CP] Embed Pods Frameworks */,
+				5F382F244A001E05E5847D46 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,16 +322,54 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C19ABDBA2B97719500103EF4 /* Poppins-Black.ttf in Resources */,
+				C19ABDB32B97719500103EF4 /* Poppins-LightItalic.ttf in Resources */,
+				C19ABDB72B97719500103EF4 /* Poppins-BlackItalic.ttf in Resources */,
+				C19ABD942B97716500103EF4 /* LoraItalic.ttf in Resources */,
+				C19ABDB12B97719500103EF4 /* Poppins-Light.ttf in Resources */,
+				C19ABDB42B97719500103EF4 /* Poppins-Thin.ttf in Resources */,
+				C19ABDAD2B97719500103EF4 /* Poppins-MediumItalic.ttf in Resources */,
+				C19ABDAA2B97719500103EF4 /* Poppins-SemiBoldItalic.ttf in Resources */,
+				C19ABDB52B97719500103EF4 /* Poppins-Bold.ttf in Resources */,
+				C19ABDA92B97719500103EF4 /* Poppins-SemiBold.ttf in Resources */,
 				2660D7CF2B8E651700FF4716 /* Preview Assets.xcassets in Resources */,
 				2660D7CC2B8E651700FF4716 /* Assets.xcassets in Resources */,
-				26E8F7032B9663A400EC40F4 /* GoogleService-Info.plist in Resources */,
+				C19ABDB92B97719500103EF4 /* Poppins-ExtraLight.ttf in Resources */,
+				C19ABD912B976E6600103EF4 /* LeagueSpartan.ttf in Resources */,
+				C19ABDB22B97719500103EF4 /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				C19ABDAB2B97719500103EF4 /* Poppins-ThinItalic.ttf in Resources */,
+				C19ABDAF2B97719500103EF4 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				C19ABDB02B97719500103EF4 /* Poppins-Regular.ttf in Resources */,
+				C19ABD842B97175E00103EF4 /* GoogleService-Info.plist in Resources */,
+				C19ABDB62B97719500103EF4 /* Poppins-ExtraBold.ttf in Resources */,
+				C19ABDB82B97719500103EF4 /* Poppins-Italic.ttf in Resources */,
+				C19ABDAE2B97719500103EF4 /* Poppins-Medium.ttf in Resources */,
+				C19ABD952B97716500103EF4 /* Lora.ttf in Resources */,
+				C19ABDAC2B97719500103EF4 /* Poppins-BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		32810AE14DC0F899E649D00B /* [CP] Embed Pods Frameworks */ = {
+		5F382F244A001E05E5847D46 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notextract/Pods-Notextract-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notextract/Pods-Notextract-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Notextract/Pods-Notextract-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7179E67D4AE56F0D1AFA8BD1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -223,7 +386,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Notextract/Pods-Notextract-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3AFA5EC1A44581EC2FA3BFF6 /* [CP] Check Pods Manifest.lock */ = {
+		B217905AC0D52D84DAFBD6F5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -245,23 +408,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9EF2007559C3DA6D781E3153 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Notextract/Pods-Notextract-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Notextract/Pods-Notextract-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Notextract/Pods-Notextract-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -271,8 +417,12 @@
 			files = (
 				26E8F7012B9500E600EC40F4 /* NoteCardView.swift in Sources */,
 				2660D7D82B8E655700FF4716 /* HomeView.swift in Sources */,
+				C19ABD892B975C7500103EF4 /* RoundedCorner.swift in Sources */,
 				26101C702B8E89040064A2DB /* ExtractedTextView.swift in Sources */,
+				C19ABD862B9721A100103EF4 /* LoginView.swift in Sources */,
 				2660D7DC2B8E657200FF4716 /* CameraCoordinator.swift in Sources */,
+				C19ABDBC2B9777E400103EF4 /* FontExtension.swift in Sources */,
+				C19ABD8D2B975D2300103EF4 /* ViewExtension.swift in Sources */,
 				2660D7CA2B8E651400FF4716 /* ContentView.swift in Sources */,
 				2660D7C82B8E651400FF4716 /* NotextractApp.swift in Sources */,
 				2660D7DA2B8E656200FF4716 /* CameraView.swift in Sources */,
@@ -406,7 +556,7 @@
 		};
 		2660D7D32B8E651700FF4716 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D4E9A94A1CFA61D2FD19C07 /* Pods-Notextract.debug.xcconfig */;
+			baseConfigurationReference = 7AC7244F1F3B64AF4BC32D4B /* Pods-Notextract.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -417,6 +567,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Notextract/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -439,7 +590,7 @@
 		};
 		2660D7D42B8E651700FF4716 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F28264A0259478E5D66A0575 /* Pods-Notextract.release.xcconfig */;
+			baseConfigurationReference = A498F46A289D7C7265082810 /* Pods-Notextract.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -450,6 +601,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Notextract/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
