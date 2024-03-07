@@ -6,12 +6,13 @@
 //
 
 import Foundation
-import MLKitTextRecognition
-import MLKitVision
+// import MLKitTextRecognition
+// import MLKitVision
 import UIKit
 
 class HomeViewModel: ObservableObject {
-    let latinOptions: TextRecognizerOptions
+    /*
+     let latinOptions: TextRecognizerOptions
     let textRecognizer: TextRecognizer
     var extractedText = [String]()
     
@@ -62,4 +63,5 @@ class HomeViewModel: ObservableObject {
              */
         }
     }
+     */
 }
