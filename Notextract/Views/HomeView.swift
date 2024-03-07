@@ -38,7 +38,8 @@ struct HomeView: View {
                                 Spacer()
                                 
                                 Button {
-                                    let visionImage = viewModel.prepareImage(image: capturedImage)
+                                    /*
+                                     let visionImage = viewModel.prepareImage(image: capturedImage)
                                     viewModel.processText(image: visionImage) { textResult, error in
                                         if error != nil {
                                             print("Error occurred!")
@@ -52,6 +53,10 @@ struct HomeView: View {
                                             isTextExtracted = true
                                         }
                                     }
+                                     */
+                                    extractedText = "This is the placeholder extracted text"
+                                    isTextExtracted = true
+                                    
                                 } label: {
                                     Text("Extract text")
                                         .font(.system(size: 20))

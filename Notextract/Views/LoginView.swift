@@ -48,7 +48,7 @@ struct LoginView: View {
             }
             .background(.ivory)
         }
-        .ignoresSafeArea()
+        .frame(height: UIScreen.main.bounds.height)
         .onReceive(Publishers.keyboardHeight) { keyboardHeight = $0 }
         .onAppear {
             /*
@@ -136,7 +136,7 @@ extension LoginView {
         .roundedCorner(30, corners: isSignUpMode ? [] : [.topLeft, .topRight])
         .offset(y: loginSectionOffsetY)
         .animation(Animation.easeInOut)
-        .padding(.bottom)
+        // .padding(.bottom)
     }
     
     func signUpSection() -> some View {
@@ -217,11 +217,11 @@ extension LoginView {
         }
         .padding()
         .frame(height: loginFieldsHeight)
-        .background(.charcoal)
         .roundedCorner(30, corners: isSignUpMode ? [] : [.topLeft, .topRight])
         .offset(y: loginSectionOffsetY)
         .animation(Animation.easeInOut)
         .padding(.bottom)
+        .background(.charcoal)
     }
 }
 
