@@ -8,21 +8,29 @@
 import SwiftUI
 
 struct NoteCardView: View {
-    let noteText: String
+    let noteTitle : String
+    let noteText  : String
     var body: some View {
-        ZStack {
-            VStack {
-                RoundedRectangle(cornerSize: CGSize(width: 8.0, height: 8.0))
-                    .foregroundStyle(Color.gray)
-            }
-            VStack {
-                Text(noteText)
-                    .padding()
-            }
+        VStack(alignment: .leading) {
+            Text(noteTitle)
+                .font(.customFont("LeagueSpartan-Bold", size: 20))
+                .foregroundStyle(.ivory)
+            
+            Spacer()
+            
+            Text(noteText)
+                .font(.customFont("LeagueSpartan-Regular", size: 15))
+                .foregroundStyle(.ivory)
         }
+        .padding()
+        .frame(width: 150, height: 120)
+        .background(.charcoal)
+        .roundedCorner(20, corners: .allCorners)
     }
 }
 
 #Preview {
-    NoteCardView(noteText: "Hello, this is a \ntemporary note")
+    NoteCardView(
+        noteTitle: "Note title",
+        noteText: "Hello, this is a \ntemporary note. It contains the following information: \n - Rice \n - Beans")
 }
