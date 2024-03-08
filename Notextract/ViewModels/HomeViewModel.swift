@@ -11,6 +11,13 @@ import Foundation
 import UIKit
 
 class HomeViewModel: ObservableObject {
+    
+    // @Published var notesList = [Note]()
+    @Published var notesList = [
+        Note(title: "Title 1", text: "Note 1", category: "Note", dateCreated: Date.now),
+        Note(title: "Title 2", text: "Note 2", category: "Note", dateCreated: Date.now),
+        Note(title: "Title 3", text: "Note 3", category: "Note", dateCreated: Date.now)
+    ]
     /*
      let latinOptions: TextRecognizerOptions
     let textRecognizer: TextRecognizer
