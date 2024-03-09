@@ -28,8 +28,10 @@ struct HomeView: View {
         }
     }
     
-    func saveExtractedText() {
+    func saveExtractedText(text: String) {
+        viewModel.saveTextExtractedFromImage(text: text)
         self.isTextSaved = true
+        self.capturedImage = nil
     }
 }
 
@@ -83,10 +85,15 @@ extension HomeView {
                         if idx % 2 == 0 {
                             let firstNote = note
                             let secondNote = idx + 1 < notesWithIndices.count ? viewModel.notesList[idx + 1] : nil
-                            HStack(spacing: 5) {
-                                NoteCardView(noteTitle: firstNote.title, noteText: firstNote.text)
-                                if secondNote != nil {
-                                    Spacer()                                
+                            if idx == notesWithIndices.count - 1 {
+                                HStack {
+                                    NoteCardView(noteTitle: firstNote.title, noteText: firstNote.text)
+                                    Spacer()
+                                }
+                            } else {
+                                HStack(spacing: 5) {
+                                    NoteCardView(noteTitle: firstNote.title, noteText: firstNote.text)
+                                    Spacer()
                                     NoteCardView(noteTitle: secondNote!.title, noteText: secondNote!.text)
                                 }
                             }
@@ -95,7 +102,7 @@ extension HomeView {
                     .listRowBackground(Color.ivory)
                     .listRowSeparator(.hidden)
                 }
-                .padding()
+                .padding(.vertical)
                 .listStyle(.plain)
             }
             
@@ -111,18 +118,16 @@ extension HomeView {
                 Image(systemName: "camera")
                     .font(.system(size: 50))
                     .padding()
-                    .background(.puce)
+                    .background(.gold)
                     .foregroundStyle(.white)
                     .clipShape(.circle)
             }
             .sheet(isPresented: $isCameraPresented) {
                 CameraView(isPresented: $isCameraPresented, capturedImage: self.$capturedImage)
+                    .background(.black)
             }
-            .sheet(isPresented: $isTextExtracted, onDismiss: saveExtractedText) {
-                ExtractedTextView(extractedText: self.$extractedText)
-                    .onDisappear {
-                        viewModel.notesList.append(Note(title: "Note title", text: extractedText, category: "Note", dateCreated: Date.now))
-                    }
+            .sheet(isPresented: $isTextExtracted) {
+                ExtractedTextView(sender: self, extractedText: self.$extractedText)
             }
         }
         .navigationTitle("notExtract")
