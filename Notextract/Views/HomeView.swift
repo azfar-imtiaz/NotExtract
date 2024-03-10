@@ -77,6 +77,7 @@ extension HomeView {
                         .buttonStyle(.borderedProminent)
                         .padding()
                     }
+                    .frame(width: UIScreen.main.bounds.width)
                 }
             } else {
                 let notesWithIndices = viewModel.notesList.enumerated().map({ $0 })

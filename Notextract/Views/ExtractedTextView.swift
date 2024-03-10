@@ -68,7 +68,7 @@ extension ExtractedTextView {
             
             HStack(spacing: 20) {
                 Button {
-                    print("Cancel pressed!")
+                    dismiss()
                 } label: {
                     Text("Cancel")
                         .font(.customFont("LeagueSpartan-Regular", size: 25))
