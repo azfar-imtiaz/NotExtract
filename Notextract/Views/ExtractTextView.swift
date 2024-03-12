@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExtractTextView: View {
     var sender: Any?
-    var capturedImage: UIImage?
+    @Binding var capturedImage: UIImage?
     @State var extractedText : String = ""
     @State var extractTextFromImage : Bool = false
     @Environment(\.dismiss) private var dismiss
@@ -21,10 +21,12 @@ struct ExtractTextView: View {
             NavigationStack {
                 extractTextView(image: capturedImage)
             }
+            .tint(.charcoal)
         } else {
             NavigationView {
                 extractTextView(image: capturedImage)
             }
+            .tint(.charcoal)
         }
     }
 }
@@ -54,7 +56,7 @@ extension ExtractTextView {
                         Text("Cancel")
                             .font(.customFont("LeagueSpartan-Regular", size: 20))
                             .frame(width: 70)
-                            .foregroundStyle(.ivory)
+                            .foregroundStyle(.ivoryAlways)
                             .padding()
                             .background(.puce)
                             .roundedCorner(8, corners: .allCorners)
@@ -67,7 +69,7 @@ extension ExtractTextView {
                         Text("Extract text")
                             .font(.customFont("LeagueSpartan-Regular", size: 20))
                             .frame(maxWidth: 100)
-                            .foregroundStyle(.ivory)
+                            .foregroundStyle(.ivoryAlways)
                             .padding()
                             .background(.gold)
                             .roundedCorner(8, corners: .allCorners)
@@ -129,7 +131,7 @@ extension ExtractTextView {
                     Text("Cancel")
                         .font(.customFont("LeagueSpartan-Regular", size: 25))
                         .frame(width: 70)
-                        .foregroundStyle(.ivory)
+                        .foregroundStyle(.ivoryAlways)
                         .padding()
                         .background(.puce)
                         .roundedCorner(8, corners: .allCorners)
@@ -144,7 +146,7 @@ extension ExtractTextView {
                     Text("Save")
                         .font(.customFont("LeagueSpartan-Regular", size: 25))
                         .frame(width: 70)
-                        .foregroundStyle(.ivory)
+                        .foregroundStyle(.ivoryAlways)
                         .padding()
                         .background(.gold)
                         .roundedCorner(8, corners: .allCorners)
@@ -251,5 +253,5 @@ extension ExtractTextView {
 
 #Preview {
     // ExtractTextView(sender: "nil", extractedText: .constant("Text1"))
-    ExtractTextView(sender: "nil", capturedImage: UIImage(named: "notExtract"), extractedText: "Lolz")
+    ExtractTextView(sender: "nil", capturedImage: .constant(UIImage(named: "notExtract")), extractedText: "Lolz")
 }

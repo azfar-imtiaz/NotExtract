@@ -20,7 +20,7 @@ struct TextView: UIViewRepresentable {
         let textView = UITextView()
         textView.backgroundColor = backgroundColor
         textView.textColor = .charcoal
-        textView.layer.borderColor = Color.charcoal.cgColor
+        textView.layer.borderColor = UIColor(named: "charcoal")?.cgColor
         textView.layer.borderWidth = 1.5
         textView.layer.cornerRadius = 8
         textView.textAlignment = .left

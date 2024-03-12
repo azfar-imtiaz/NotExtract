@@ -18,6 +18,23 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct NotextractApp: App {
+    init() {
+        let appear = UINavigationBarAppearance()
+        
+        appear.configureWithTransparentBackground()
+        
+        let attrs: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: "LeagueSpartan-Bold", size: 36)!,
+            .foregroundColor: UIColor(.charcoal),
+        ]
+
+        appear.largeTitleTextAttributes = attrs
+        appear.titleTextAttributes = attrs
+        UINavigationBar.appearance().standardAppearance = appear
+        UINavigationBar.appearance().compactAppearance = appear
+        UINavigationBar.appearance().scrollEdgeAppearance = appear
+    }
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {

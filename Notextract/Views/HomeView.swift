@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var isCameraPresented : Bool   = false
-    @State private var isTextExtracted   : Bool   = false
+    @State private var extractTextFlag   : Bool   = false
     @State private var isTextSaved       : Bool   = false
     @State private var extractedText     : String = ""
     @State private var capturedImage     : UIImage?
@@ -21,10 +21,12 @@ struct HomeView: View {
             NavigationStack {
                 homeScreenView()
             }
+            .tint(.charcoal)
         } else {
             NavigationView {
                 homeScreenView()
             }
+            .tint(.charcoal)
         }
     }
     
@@ -77,16 +79,12 @@ extension HomeView {
             
             Spacer()
             
-            /*NavigationLink(destination: CameraView(isPresented: $isCameraPresented, capturedImage: self.$capturedImage), isActive: $isCameraPresented) {
-                EmptyView()
-            }*/
-            
             Button(action: {
                 self.capturedImage = nil
                 self.extractedText = ""
-                self.isTextExtracted = false
+                self.extractTextFlag = false
                 self.isTextSaved = false
-                self.isCameraPresented.toggle()
+                self.isCameraPresented = true
             }) {
                 Image(systemName: "camera")
                     .font(.system(size: 50))
@@ -97,17 +95,18 @@ extension HomeView {
             }
             .sheet(isPresented: $isCameraPresented, onDismiss: {
                 if capturedImage != nil {
-                    isTextExtracted.toggle()
+                    extractTextFlag = true
                 }
             }) {
                 CameraView(isPresented: $isCameraPresented, capturedImage: self.$capturedImage)
                     .background(.black)
             }
-            .sheet(isPresented: $isTextExtracted) {
-                ExtractTextView(sender: self, capturedImage: capturedImage)
+            .sheet(isPresented: $extractTextFlag) {
+                ExtractTextView(sender: self, capturedImage: self.$capturedImage)
             }
         }
         .navigationTitle("notExtract")
+        .navigationBarTitleDisplayMode(.automatic)
         .padding()
         .background(
             DotPattern(
