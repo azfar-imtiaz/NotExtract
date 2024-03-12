@@ -49,6 +49,8 @@ extension ExtractTextView {
                     .clipShape(.rect(cornerSize: CGSize(width: 8, height: 8)))
                     .padding()
                 
+                Spacer()
+                
                 HStack(spacing: 20) {
                     Button {
                         dismiss()
@@ -76,8 +78,6 @@ extension ExtractTextView {
                     }
                 }
                 .padding()
-                
-                Spacer()
             }
         }
         .navigationTitle("Extract text")
@@ -98,7 +98,7 @@ extension ExtractTextView {
             
             HStack {
                 Text("NOTE TITLE")
-                    .font(.customFont("LeagueSpartan-Bold", size: 20))
+                    .font(.customFont("LeagueSpartan-Bold", size: 18))
                     .foregroundStyle(.charcoal)
                     .opacity(0.5)
                 Spacer()
@@ -112,7 +112,7 @@ extension ExtractTextView {
             
             HStack {
                 Text("NOTE TEXT")
-                    .font(.customFont("LeagueSpartan-Bold", size: 20))
+                    .font(.customFont("LeagueSpartan-Bold", size: 18))
                     .foregroundStyle(.charcoal)
                     .opacity(0.5)
                 Spacer()
@@ -129,7 +129,7 @@ extension ExtractTextView {
                     dismiss()
                 } label: {
                     Text("Cancel")
-                        .font(.customFont("LeagueSpartan-Regular", size: 25))
+                        .font(.customFont("LeagueSpartan-Regular", size: 20))
                         .frame(width: 70)
                         .foregroundStyle(.ivoryAlways)
                         .padding()
@@ -144,7 +144,7 @@ extension ExtractTextView {
                     dismiss()
                 } label: {
                     Text("Save")
-                        .font(.customFont("LeagueSpartan-Regular", size: 25))
+                        .font(.customFont("LeagueSpartan-Regular", size: 20))
                         .frame(width: 70)
                         .foregroundStyle(.ivoryAlways)
                         .padding()
@@ -152,8 +152,7 @@ extension ExtractTextView {
                         .roundedCorner(8, corners: .allCorners)
                 }
             }
-            
-            Spacer()
+            .padding()
             
         }
         .navigationTitle("Extracted text")
