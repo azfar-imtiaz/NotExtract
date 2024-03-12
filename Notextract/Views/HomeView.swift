@@ -38,47 +38,15 @@ struct HomeView: View {
 extension HomeView {
     func homeScreenView() -> some View {
         VStack {
-            if let capturedImage {
-                if !isTextSaved {
-                    VStack {
-                        Image(uiImage: capturedImage)
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(.rect(cornerSize: CGSize(width: 8, height: 8)))
-                            .padding()
-                        
-                        Spacer()
-                        
-                        Button {
-                            /*
-                             let visionImage = viewModel.prepareImage(image: capturedImage)
-                            viewModel.processText(image: visionImage) { textResult, error in
-                                if error != nil {
-                                    print("Error occurred!")
-                                } else if let textResult = textResult {
-                                    var texts = [String]()
-                                    extractedText.removeAll()
-                                    for block in textResult.blocks {
-                                        texts.append(block.text)
-                                    }
-                                    extractedText = texts.joined(separator: "\n")
-                                    isTextExtracted = true
-                                }
-                            }
-                             */
-                            extractedText = "This is the placeholder extracted text"
-                            isTextExtracted = true
-                            
-                        } label: {
-                            Text("Extract text")
-                                .font(.system(size: 20))
-                                .bold()
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .padding()
-                    }
-                    .frame(width: UIScreen.main.bounds.width)
+            if viewModel.notesList.count == 0 {
+                HStack {
+                    Text("CREATE YOUR FIRST NOTE!")
+                        .font(.customFont("LeagueSpartan-Bold", size: 20))
+                        .foregroundStyle(.charcoal)
+                        .opacity(0.5)
+                    Spacer()
                 }
+                .padding(.top,  50)
             } else {
                 let notesWithIndices = viewModel.notesList.enumerated().map({ $0 })
                 List {
@@ -100,7 +68,7 @@ extension HomeView {
                             }
                         }
                     }
-                    .listRowBackground(Color.ivory)
+                    .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
                 }
                 .padding(.vertical)
@@ -108,6 +76,10 @@ extension HomeView {
             }
             
             Spacer()
+            
+            /*NavigationLink(destination: CameraView(isPresented: $isCameraPresented, capturedImage: self.$capturedImage), isActive: $isCameraPresented) {
+                EmptyView()
+            }*/
             
             Button(action: {
                 self.capturedImage = nil
@@ -123,17 +95,28 @@ extension HomeView {
                     .foregroundStyle(.white)
                     .clipShape(.circle)
             }
-            .sheet(isPresented: $isCameraPresented) {
+            .sheet(isPresented: $isCameraPresented, onDismiss: {
+                if capturedImage != nil {
+                    isTextExtracted.toggle()
+                }
+            }) {
                 CameraView(isPresented: $isCameraPresented, capturedImage: self.$capturedImage)
                     .background(.black)
             }
             .sheet(isPresented: $isTextExtracted) {
-                ExtractedTextView(sender: self, extractedText: self.$extractedText)
+                ExtractTextView(sender: self, capturedImage: capturedImage)
             }
         }
         .navigationTitle("notExtract")
         .padding()
-        .background(.ivory)
+        .background(
+            DotPattern(
+                backgroundColor: .ivory,
+                dotColor: .charcoal,
+                opacity: 0.15,
+                spacing: 7
+            )
+        )
     }
 }
 
