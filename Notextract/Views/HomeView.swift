@@ -27,7 +27,7 @@ struct HomeView: View {
                 homeScreenView()
             }
             .tint(.charcoal)
-        }
+        }        
     }
     
     func saveExtractedText(text: String) {
@@ -48,7 +48,7 @@ extension HomeView {
                         .opacity(0.5)
                     Spacer()
                 }
-                .padding(.top,  50)
+                .padding(.top,  30)
             } else {
                 let notesWithIndices = viewModel.notesList.enumerated().map({ $0 })
                 List {

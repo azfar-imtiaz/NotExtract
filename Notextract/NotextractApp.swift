@@ -24,7 +24,7 @@ struct NotextractApp: App {
         appear.configureWithTransparentBackground()
         
         let attrs: [NSAttributedString.Key: Any] = [
-            .font: UIFont(name: "LeagueSpartan-Bold", size: 40)!,
+            .font: UIFont(name: "LeagueSpartan-Bold", size: 38)!,
             .foregroundColor: UIColor(.charcoal),
         ]
 

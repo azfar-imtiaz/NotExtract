@@ -9,6 +9,9 @@ import SwiftUI
 import Combine
 
 struct LoginView: View {
+    
+    @ObservedObject var authManager: AuthManager
+    
     @ScaledMetric(relativeTo: .body) private var secureFieldHeight: CGFloat = 22
     
     @State private var logoOffsetY: CGFloat = 300
@@ -20,6 +23,7 @@ struct LoginView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var repeatedPassword: String = ""
+    @State private var isLoading: Bool = false
     
     @FocusState private var isFieldInFocus: Bool
     
@@ -31,13 +35,14 @@ struct LoginView: View {
                 if !isSignUpMode {
                     Spacer()
                     
-                    Image("notExtract")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 300, height: 300)
-                        .offset(y: logoOffsetY)
-                        .opacity(isFieldInFocus ? 0.0 : 1.0)
-                        .animation(Animation.easeInOut)
+                    withAnimation {
+                        Image("notExtract")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 300, height: 300)
+                            .offset(y: logoOffsetY)
+                            .opacity(isFieldInFocus ? 0.0 : 1.0)
+                    }
                 }
                 
                 if !isSignUpMode {
@@ -97,14 +102,28 @@ extension LoginView {
             
             Button {
                 print("Login pressed!")
+                isLoading = true
+                if !authManager.login(username: username, password: password) {
+                    isLoading = false
+                    print("Login failed!")
+                }
             } label: {
-                Text("Login")
-                    .foregroundStyle(.charcoal)
-                    .frame(width: 150)
-                    .font(.customFont("LeagueSpartan-Regular", size: 20))
-                    .padding()
-                    .background(.gold)
-                    .cornerRadius(5.0)
+                if isLoading {
+                    ProgressView()
+                        .tint(.charcoal)
+                        .frame(width: 150)
+                        .padding()
+                        .background(.gold)
+                        .roundedCorner(8, corners: .allCorners)
+                } else {
+                    Text("Login")
+                        .foregroundStyle(.charcoal)
+                        .frame(width: 150)
+                        .font(.customFont("LeagueSpartan-Regular", size: 20))
+                        .padding()
+                        .background(.gold)
+                        .roundedCorner(8, corners: .allCorners)
+                }
             }
             
             HStack(spacing: .zero) {
@@ -131,11 +150,11 @@ extension LoginView {
             .opacity(isFieldInFocus ? 0.0 : 1.0)
         }
         .padding()
+        .transition(.move(edge: .bottom))
         .frame(height: loginFieldsHeight)
         .background(.charcoal)
         .roundedCorner(30, corners: isSignUpMode ? [] : [.topLeft, .topRight])
         .offset(y: loginSectionOffsetY)
-        .animation(Animation.easeInOut)
         // .padding(.bottom)
     }
     
@@ -216,15 +235,15 @@ extension LoginView {
             Spacer()
         }
         .padding()
+        .transition(.move(edge: .bottom))
         .frame(height: loginFieldsHeight)
         .roundedCorner(30, corners: isSignUpMode ? [] : [.topLeft, .topRight])
         .offset(y: loginSectionOffsetY)
-        .animation(Animation.easeInOut)
         .padding(.bottom)
         .background(.charcoal)
     }
 }
 
 #Preview {
-    LoginView()
+    LoginView(authManager: AuthManager())
 }
