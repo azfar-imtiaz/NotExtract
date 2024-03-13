@@ -51,3 +51,60 @@ struct TextView: UIViewRepresentable {
         }
     }
 }
+
+struct CustomTextField: View {
+    var placeholderText: String
+    @Binding var text: String
+    
+    var body: some View {
+        if #available(iOS 17.0, *) {
+            TextField(
+                placeholderText,
+                text: $text,
+                prompt: Text(placeholderText)
+                    .foregroundStyle(.ivory.opacity(0.5))
+            )
+        } else {
+            // Fallback on earlier versions
+            // This will require creating a custom TextField using UIViewRepresentable. Check the first answer on this post: https://stackoverflow.com/questions/61338026/how-can-i-adjust-textfield-placeholder-color-swiftui
+            ZStack(alignment: .leading) {
+                if text.isEmpty {
+                    Text(placeholderText)
+                        .foregroundStyle(.ivory)
+                        .opacity(0.5)
+                } else {
+                    TextField("", text: $text)
+                }
+            }
+        }
+    }
+}
+
+
+struct CustomSecureField: View {
+    var placeholderText: String
+    @Binding var text: String
+    
+    var body: some View {
+        if #available(iOS 17.0, *) {
+            SecureField(
+                placeholderText,
+                text: $text,
+                prompt: Text(placeholderText)
+                    .foregroundStyle(.ivory.opacity(0.5))
+            )
+        } else {
+            // Fallback on earlier versions
+            // This will require creating a custom TextField using UIViewRepresentable. Check the first answer on this post: https://stackoverflow.com/questions/61338026/how-can-i-adjust-textfield-placeholder-color-swiftui
+            ZStack(alignment: .leading) {
+                if text.isEmpty {
+                    Text(placeholderText)
+                        .foregroundStyle(.ivory)
+                        .opacity(0.5)
+                } else {
+                    SecureField("", text: $text)
+                }
+            }
+        }
+    }
+}

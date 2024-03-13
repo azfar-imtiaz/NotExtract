@@ -20,10 +20,12 @@ struct LoginView: View {
     @State private var loginFieldsHeight: Double = 500
     @State private var isSignUpMode: Bool = false
     
-    @State private var username: String = ""
-    @State private var password: String = ""
-    @State private var repeatedPassword: String = ""
-    @State private var isLoading: Bool = false
+    @State private var firstName : String = ""
+    @State private var lastName  : String = ""
+    @State private var username  : String = ""
+    @State private var password  : String = ""
+    @State private var repeatPassword : String = ""
+    @State private var isLoading : Bool = false
     
     @FocusState private var isFieldInFocus: Bool
     
@@ -82,18 +84,20 @@ extension LoginView {
                 .font(.customFont("LeagueSpartan-Bold", size: 35))
                 .foregroundStyle(.gold)
                 .padding(.bottom, 30)
+                .opacity(isFieldInFocus ? 0.0 : 1.0)
             
-            TextField("Username", text: $username)
-                .underlineTextField()
+            CustomTextField(placeholderText: "Email", text: $username)
+                .frame(minHeight: secureFieldHeight)
+                .underlineTextField(color: .ivory)
                 .padding()
                 .foregroundStyle(.ivory)
                 .font(.customFont("LeagueSpartan-Regular", size: 20))
-                .padding(.bottom, 10)
+                .padding(.bottom, 20)
                 .focused($isFieldInFocus)
             
-            SecureField("Password", text: $password)
+            CustomSecureField(placeholderText: "Password", text: $password)
                 .frame(minHeight: secureFieldHeight)
-                .underlineTextField()
+                .underlineTextField(color: .ivory)
                 .padding()
                 .foregroundStyle(.ivory)
                 .font(.customFont("LeagueSpartan-Regular", size: 20))
@@ -126,6 +130,10 @@ extension LoginView {
                 }
             }
             
+            if isFieldInFocus {
+                Spacer()
+            }
+            
             HStack(spacing: .zero) {
                 Text("Don't have an account?")
                     .foregroundStyle(.ivory)
@@ -155,6 +163,7 @@ extension LoginView {
         .background(.charcoal)
         .roundedCorner(30, corners: isSignUpMode ? [] : [.topLeft, .topRight])
         .offset(y: loginSectionOffsetY)
+        // .keyboardAdaptive()
         // .padding(.bottom)
     }
     
@@ -169,33 +178,54 @@ extension LoginView {
                 .multilineTextAlignment(.center)
                 .opacity(isFieldInFocus ? 0.0 : 1.0)
             
-            TextField("Email", text: $username)
-                .underlineTextField()
+            HStack(spacing: 20) {
+                CustomTextField(placeholderText: "First name", text: $firstName)
+                    .underlineTextField(color: .ivory)
+                    .foregroundStyle(.ivory)
+                    .font(.customFont("LeagueSpartan-Regular", size: 20))
+                    .padding(.bottom, 10)
+                    .focused($isFieldInFocus)
+                
+                Spacer()
+                
+                CustomTextField(placeholderText: "Last name", text: $lastName)
+                    .underlineTextField(color: .ivory)
+                    .foregroundStyle(.ivory)
+                    .font(.customFont("LeagueSpartan-Regular", size: 20))
+                    .padding(.bottom, 10)
+                    .focused($isFieldInFocus)
+            }
+            .padding()
+            
+            CustomTextField(placeholderText: "Email", text: $username)
+                .underlineTextField(color: .ivory)
                 .padding()
                 .foregroundStyle(.ivory)
                 .font(.customFont("LeagueSpartan-Regular", size: 20))
                 .padding(.bottom, 10)
                 .focused($isFieldInFocus)
             
-            SecureField("Password", text: $password)
+            CustomSecureField(placeholderText: "Password", text: $password)
                 .frame(minHeight: secureFieldHeight)
-                .underlineTextField()
+                .underlineTextField(color: .ivory)
                 .padding()
                 .foregroundStyle(.ivory)
                 .font(.customFont("LeagueSpartan-Regular", size: 20))
                 .padding(.bottom, 10)
                 .focused($isFieldInFocus)
             
-            SecureField("Repeat Password", text: $repeatedPassword)
+            CustomSecureField(placeholderText: "Repeat password", text: $password)
                 .frame(minHeight: secureFieldHeight)
-                .underlineTextField()
+                .underlineTextField(color: .ivory)
                 .padding()
                 .foregroundStyle(.ivory)
                 .font(.customFont("LeagueSpartan-Regular", size: 20))
                 .padding(.bottom, 20)
                 .focused($isFieldInFocus)
             
-            Spacer()
+            if !isFieldInFocus {
+                Spacer()
+            }
             
             Button {
                 print("Sign up successful!!")
