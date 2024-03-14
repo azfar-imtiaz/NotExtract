@@ -156,6 +156,7 @@ extension ExtractTextView {
             
         }
         .navigationTitle("Extracted text")
+        .navigationBarTitleDisplayMode(.inline)
         .background(
             DotPattern(
                 backgroundColor: .ivory,

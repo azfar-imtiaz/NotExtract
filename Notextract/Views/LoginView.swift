@@ -38,10 +38,15 @@ struct LoginView: View {
                     Spacer()
                     
                     withAnimation {
-                        Image("notExtract")
-                            .resizable()
+//                        Image("notExtract")
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fit)
+//                            .frame(width: 300, height: 300)
+//                            .offset(y: logoOffsetY)
+//                            .opacity(isFieldInFocus ? 0.0 : 1.0)
+                        GIFView(name: "notextract_ascend")
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 300, height: 300)
+                            .frame(height: 350)
                             .offset(y: logoOffsetY)
                             .opacity(isFieldInFocus ? 0.0 : 1.0)
                     }
@@ -53,7 +58,7 @@ struct LoginView: View {
                     signUpSection()
                 }
             }
-            .background(.ivory)
+            .background(.ivoryAlways)
         }
         .frame(height: UIScreen.main.bounds.height)
         .onReceive(Publishers.keyboardHeight) { keyboardHeight = $0 }
@@ -67,7 +72,7 @@ struct LoginView: View {
                 }
             }
              */
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 withAnimation {
                     logoOffsetY = 0
                     loginSectionOffsetY = 0
@@ -160,7 +165,7 @@ extension LoginView {
         .padding()
         .transition(.move(edge: .bottom))
         .frame(height: loginFieldsHeight)
-        .background(.charcoal)
+        .background(.charcoalAlways)
         .roundedCorner(30, corners: isSignUpMode ? [] : [.topLeft, .topRight])
         .offset(y: loginSectionOffsetY)
         // .keyboardAdaptive()
@@ -270,7 +275,7 @@ extension LoginView {
         .roundedCorner(30, corners: isSignUpMode ? [] : [.topLeft, .topRight])
         .offset(y: loginSectionOffsetY)
         .padding(.bottom)
-        .background(.charcoal)
+        .background(.charcoalAlways)
     }
 }
 
