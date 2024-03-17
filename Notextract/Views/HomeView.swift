@@ -13,6 +13,7 @@ struct HomeView: View {
     @State private var isTextSaved       : Bool   = false
     @State private var extractedText     : String = ""
     @State private var capturedImage     : UIImage?
+    @State private var isNoteSelected : Bool = false
     
     @StateObject private var viewModel = HomeViewModel()
     
@@ -27,7 +28,7 @@ struct HomeView: View {
                 homeScreenView()
             }
             .tint(.charcoal)
-        }        
+        }
     }
     
     func saveExtractedText(text: String) {
@@ -50,31 +51,18 @@ extension HomeView {
                 }
                 .padding(.top,  30)
             } else {
-                let notesWithIndices = viewModel.notesList.enumerated().map({ $0 })
-                List {
-                    ForEach(notesWithIndices, id: \.element.id) {idx, note in
-                        if idx % 2 == 0 {
-                            let firstNote = note
-                            let secondNote = idx + 1 < notesWithIndices.count ? viewModel.notesList[idx + 1] : nil
-                            if idx == notesWithIndices.count - 1 {
-                                HStack {
-                                    NoteCardView(noteTitle: firstNote.title, noteText: firstNote.text)
-                                    Spacer()
-                                }
-                            } else {
-                                HStack(spacing: 5) {
-                                    NoteCardView(noteTitle: firstNote.title, noteText: firstNote.text)
-                                    Spacer()
-                                    NoteCardView(noteTitle: secondNote!.title, noteText: secondNote!.text)
-                                }
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+                        ForEach(0..<viewModel.notesList.count, id: \.self) { index in
+                            NavigationLink(destination: NoteView(note: viewModel.notesList[index])) {
+                                NoteCardView(note: viewModel.notesList[index])
+                                    .frame(width: UIScreen.main.bounds.width * 0.45, height: 200)
                             }
+                            .buttonStyle(PlainButtonStyle())
                         }
                     }
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
+                    .padding(.vertical)
                 }
-                .padding(.vertical)
-                .listStyle(.plain)
             }
             
             Spacer()

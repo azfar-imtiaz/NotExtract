@@ -8,22 +8,29 @@
 import SwiftUI
 
 struct NoteCardView: View {
-    let noteTitle : String
-    let noteText  : String
+    let note: Note
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(noteTitle)
+        VStack(alignment: .center) {
+            Text(note.title)
                 .font(.customFont("LeagueSpartan-Bold", size: 20))
                 .foregroundStyle(.ivory)
             
             Spacer()
             
-            Text(noteText)
+            Text(note.text)
+                .font(.customFont("LeagueSpartan-Regular", size: 18))
+                .foregroundStyle(.ivory)
+                .multilineTextAlignment(.leading)
+                .lineLimit(4)
+            
+            Spacer()
+            
+            Text(note.dateCreated, style: .date)
                 .font(.customFont("LeagueSpartan-Regular", size: 15))
                 .foregroundStyle(.ivory)
+                .opacity(0.8)
         }
         .padding()
-        .frame(width: 150, height: 120)
         .background(.charcoal)
         .roundedCorner(20, corners: .allCorners)
     }
@@ -31,6 +38,11 @@ struct NoteCardView: View {
 
 #Preview {
     NoteCardView(
-        noteTitle: "Note title",
-        noteText: "Hello, this is a \ntemporary note. It contains the following information: \n - Rice \n - Beans")
+        note: Note(
+            title: "Note title",
+            text: "Note text. This is the text of the note that has been crafted for testing purposes.",
+            category: "Note",
+            dateCreated: .now
+        )
+        )
 }
