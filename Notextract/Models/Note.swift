@@ -9,10 +9,10 @@ import Foundation
 
 class Note {
     let id          : UUID
-    let title       : String
-    let text        : String
-    let category    : String
-    let dateCreated : Date
+    var title       : String
+    var text        : String
+    var category    : String
+    var dateCreated : Date
     
     init(title: String, text: String, category: String, dateCreated: Date) {
         self.id = UUID()

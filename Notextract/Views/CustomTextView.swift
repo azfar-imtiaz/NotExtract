@@ -15,16 +15,19 @@ struct TextView: UIViewRepresentable {
     var textAlignment: NSTextAlignment
     var fontName: String
     var fontSize: CGFloat
+    var showBorder: Bool = true
     
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
         textView.backgroundColor = backgroundColor
         textView.textColor = .charcoal
-        textView.layer.borderColor = UIColor(named: "charcoal")?.cgColor
-        textView.layer.borderWidth = 1.5
-        textView.layer.cornerRadius = 8
-        textView.textAlignment = .left
-        textView.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        if showBorder {
+            textView.layer.borderColor = UIColor(named: "charcoal")?.cgColor
+            textView.layer.borderWidth = 1.5
+            textView.layer.cornerRadius = 8
+            textView.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)            
+        }
+        textView.textAlignment = textAlignment
         textView.font = UIFont(name: fontName, size: fontSize)
         textView.text = text
         textView.delegate = context.coordinator

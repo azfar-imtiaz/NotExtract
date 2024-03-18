@@ -111,6 +111,7 @@ extension LoginView {
             
             Button {
                 print("Login pressed!")
+                isFieldInFocus = false
                 isLoading = true
                 if !authManager.login(username: username, password: password) {
                     isLoading = false
