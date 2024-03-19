@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if authManager.authState == .loggedIn {
-                HomeView()
+                HomeView(authManager: authManager)
             } else {
                 LoginView(authManager: authManager)
             }

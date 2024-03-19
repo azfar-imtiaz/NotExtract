@@ -57,6 +57,7 @@ struct TextView: UIViewRepresentable {
 
 struct CustomTextField: View {
     var placeholderText: String
+    var color: Color
     @Binding var text: String
     
     var body: some View {
@@ -65,7 +66,7 @@ struct CustomTextField: View {
                 placeholderText,
                 text: $text,
                 prompt: Text(placeholderText)
-                    .foregroundStyle(.ivory.opacity(0.5))
+                    .foregroundStyle(color.opacity(0.5))
             )
         } else {
             // Fallback on earlier versions
@@ -73,7 +74,7 @@ struct CustomTextField: View {
             ZStack(alignment: .leading) {
                 if text.isEmpty {
                     Text(placeholderText)
-                        .foregroundStyle(.ivory)
+                        .foregroundStyle(color)
                         .opacity(0.5)
                 } else {
                     TextField("", text: $text)
@@ -86,6 +87,7 @@ struct CustomTextField: View {
 
 struct CustomSecureField: View {
     var placeholderText: String
+    var color: Color
     @Binding var text: String
     
     var body: some View {
@@ -94,7 +96,7 @@ struct CustomSecureField: View {
                 placeholderText,
                 text: $text,
                 prompt: Text(placeholderText)
-                    .foregroundStyle(.ivory.opacity(0.5))
+                    .foregroundStyle(color.opacity(0.5))
             )
         } else {
             // Fallback on earlier versions
@@ -102,7 +104,7 @@ struct CustomSecureField: View {
             ZStack(alignment: .leading) {
                 if text.isEmpty {
                     Text(placeholderText)
-                        .foregroundStyle(.ivory)
+                        .foregroundStyle(color)
                         .opacity(0.5)
                 } else {
                     SecureField("", text: $text)

@@ -91,20 +91,20 @@ extension LoginView {
                 .padding(.bottom, 30)
                 .opacity(isFieldInFocus ? 0.0 : 1.0)
             
-            CustomTextField(placeholderText: "Email", text: $username)
+            CustomTextField(placeholderText: "Email", color: .ivoryAlways, text: $username)
                 .frame(minHeight: secureFieldHeight)
-                .underlineTextField(color: .ivory)
+                .underlineTextField(color: .ivoryAlways)
                 .padding()
-                .foregroundStyle(.ivory)
+                .foregroundStyle(.ivoryAlways)
                 .font(.customFont("LeagueSpartan-Regular", size: 20))
                 .padding(.bottom, 20)
                 .focused($isFieldInFocus)
             
-            CustomSecureField(placeholderText: "Password", text: $password)
+            CustomSecureField(placeholderText: "Password", color: .ivoryAlways, text: $password)
                 .frame(minHeight: secureFieldHeight)
-                .underlineTextField(color: .ivory)
+                .underlineTextField(color: .ivoryAlways)
                 .padding()
-                .foregroundStyle(.ivory)
+                .foregroundStyle(.ivoryAlways)
                 .font(.customFont("LeagueSpartan-Regular", size: 20))
                 .padding(.bottom, 20)
                 .focused($isFieldInFocus)
@@ -142,7 +142,7 @@ extension LoginView {
             
             HStack(spacing: .zero) {
                 Text("Don't have an account?")
-                    .foregroundStyle(.ivory)
+                    .foregroundStyle(.ivoryAlways)
                     .font(.customFont("Lora-Regular", size: 15))
                     .padding(.trailing, 5)
                 
@@ -185,46 +185,46 @@ extension LoginView {
                 .opacity(isFieldInFocus ? 0.0 : 1.0)
             
             HStack(spacing: 20) {
-                CustomTextField(placeholderText: "First name", text: $firstName)
-                    .underlineTextField(color: .ivory)
-                    .foregroundStyle(.ivory)
+                CustomTextField(placeholderText: "First name", color: .ivoryAlways, text: $firstName)
+                    .underlineTextField(color: .ivoryAlways)
+                    .foregroundStyle(.ivoryAlways)
                     .font(.customFont("LeagueSpartan-Regular", size: 20))
                     .padding(.bottom, 10)
                     .focused($isFieldInFocus)
                 
                 Spacer()
                 
-                CustomTextField(placeholderText: "Last name", text: $lastName)
-                    .underlineTextField(color: .ivory)
-                    .foregroundStyle(.ivory)
+                CustomTextField(placeholderText: "Last name", color: .ivoryAlways, text: $lastName)
+                    .underlineTextField(color: .ivoryAlways)
+                    .foregroundStyle(.ivoryAlways)
                     .font(.customFont("LeagueSpartan-Regular", size: 20))
                     .padding(.bottom, 10)
                     .focused($isFieldInFocus)
             }
             .padding()
             
-            CustomTextField(placeholderText: "Email", text: $username)
-                .underlineTextField(color: .ivory)
+            CustomTextField(placeholderText: "Email", color: .ivoryAlways, text: $username)
+                .underlineTextField(color: .ivoryAlways)
                 .padding()
-                .foregroundStyle(.ivory)
+                .foregroundStyle(.ivoryAlways)
                 .font(.customFont("LeagueSpartan-Regular", size: 20))
                 .padding(.bottom, 10)
                 .focused($isFieldInFocus)
             
-            CustomSecureField(placeholderText: "Password", text: $password)
+            CustomSecureField(placeholderText: "Password", color: .ivoryAlways, text: $password)
                 .frame(minHeight: secureFieldHeight)
-                .underlineTextField(color: .ivory)
+                .underlineTextField(color: .ivoryAlways)
                 .padding()
-                .foregroundStyle(.ivory)
+                .foregroundStyle(.ivoryAlways)
                 .font(.customFont("LeagueSpartan-Regular", size: 20))
                 .padding(.bottom, 10)
                 .focused($isFieldInFocus)
             
-            CustomSecureField(placeholderText: "Repeat password", text: $password)
+            CustomSecureField(placeholderText: "Repeat password", color: .ivoryAlways, text: $password)
                 .frame(minHeight: secureFieldHeight)
-                .underlineTextField(color: .ivory)
+                .underlineTextField(color: .ivoryAlways)
                 .padding()
-                .foregroundStyle(.ivory)
+                .foregroundStyle(.ivoryAlways)
                 .font(.customFont("LeagueSpartan-Regular", size: 20))
                 .padding(.bottom, 20)
                 .focused($isFieldInFocus)
@@ -237,7 +237,7 @@ extension LoginView {
                 print("Sign up successful!!")
             } label: {
                 Text("Sign up")
-                    .foregroundStyle(.charcoal)
+                    .foregroundStyle(.ivoryAlways)
                     .frame(width: 150)
                     .font(.customFont("LeagueSpartan-Regular", size: 20))
                     .padding()
@@ -247,7 +247,7 @@ extension LoginView {
             
             HStack(spacing: .zero) {
                 Text("Go back to")
-                    .foregroundStyle(.ivory)
+                    .foregroundStyle(.ivoryAlways)
                     .font(.customFont("Lora-Regular", size: 15))
                     .padding(.trailing, 5)
                 
@@ -280,6 +280,10 @@ extension LoginView {
     }
 }
 
-#Preview {
-    LoginView(authManager: AuthManager())
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        ForEach(ColorScheme.allCases, id: \.self) {
+            LoginView(authManager: AuthManager()).preferredColorScheme($0)
+        }
+    }
 }

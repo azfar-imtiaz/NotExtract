@@ -62,6 +62,7 @@ struct NoteView: View {
     func noteView() -> some View {
         VStack {
             Divider()
+                .overlay(.charcoal)
                 .padding()
             
             VStack(alignment: .leading) {

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var authManager: AuthManager
+    
     @State private var isCameraPresented : Bool   = false
     @State private var extractTextFlag   : Bool   = false
     @State private var isTextSaved       : Bool   = false
@@ -104,9 +106,53 @@ extension HomeView {
                 spacing: 7
             )
         )
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    
+                    Button {
+                        print("Settings pressed!")
+                    } label: {
+                        HStack(spacing: 0) {
+                            Text("Settings")
+                            Image(systemName: "gearshape")
+                        }
+                    }
+                    
+                    Button {
+                        print("Profile pressed!")
+                    } label: {
+                        HStack(spacing: 0) {
+                            Text("Profile")
+                            Image(systemName: "person.crop.circle")
+                        }
+                    }
+                    
+                    Divider()
+                    
+                    Button(role: .destructive) {
+                        authManager.authState = .loggedOut
+                    } label: {
+                        HStack(spacing: 0) {
+                            Text("Log out")
+                            Image(systemName: "rectangle.portrait.and.arrow.right")
+                        }
+                        .tint(.puce)
+                        .background(.charcoal)
+                    }
+                } label: {
+                    Label("Menu", systemImage: "ellipsis.circle")
+                        .foregroundStyle(.charcoal)
+                }
+            }
+        }
     }
 }
 
-#Preview {
-    HomeView()
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        ForEach(ColorScheme.allCases, id: \.self) {
+            HomeView(authManager: AuthManager()).preferredColorScheme($0)
+        }
+    }
 }
