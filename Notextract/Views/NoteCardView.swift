@@ -12,13 +12,13 @@ struct NoteCardView: View {
     var body: some View {
         VStack(alignment: .center) {
             Text(note.title)
-                .font(.customFont("LeagueSpartan-Bold", size: 20))
+                .font(.customFont("LeagueSpartan-Bold", size: 18))
                 .foregroundStyle(.ivory)
             
             Spacer()
             
             Text(note.text)
-                .font(.customFont("LeagueSpartan-Regular", size: 18))
+                .font(.customFont("LeagueSpartan-Regular", size: 15))
                 .foregroundStyle(.ivory)
                 .multilineTextAlignment(.leading)
                 .lineLimit(4)
@@ -26,13 +26,13 @@ struct NoteCardView: View {
             Spacer()
             
             Text(note.dateCreated, style: .date)
-                .font(.customFont("LeagueSpartan-Regular", size: 15))
+                .font(.customFont("LeagueSpartan-Regular", size: 12))
                 .foregroundStyle(.ivory)
                 .opacity(0.8)
         }
         .padding()
         .background(.charcoal)
-        .roundedCorner(20, corners: .allCorners)
+        .roundedCorner(10, corners: .allCorners)
     }
 }
 

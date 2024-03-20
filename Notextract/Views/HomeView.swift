@@ -13,9 +13,12 @@ struct HomeView: View {
     @State private var isCameraPresented : Bool   = false
     @State private var extractTextFlag   : Bool   = false
     @State private var isTextSaved       : Bool   = false
+    @State private var isNoteSelected    : Bool = false
     @State private var extractedText     : String = ""
     @State private var capturedImage     : UIImage?
-    @State private var isNoteSelected : Bool = false
+    
+    
+    @State private var searchText: String = ""
     
     @StateObject private var viewModel = HomeViewModel()
     
@@ -51,14 +54,62 @@ extension HomeView {
                         .opacity(0.5)
                     Spacer()
                 }
-                .padding(.top,  30)
+                .padding(.top, 30)
             } else {
+                HStack {
+                    Text("NotExtract")
+                        .font(.customFont("Amsterdam-Two_ttf", size: 30))
+                        .frame(height: 20)
+                        .padding(.bottom)
+                    Spacer()
+                    Menu {
+                        NavigationLink(destination: SettingsView()) {
+                            Text("Settings")
+                        }
+                        
+//                        Button {
+//                            print("Profile pressed!")
+//                        } label: {
+//                            HStack(spacing: 0) {
+//                                Text("Profile")
+//                                Image(systemName: "person.crop.circle")
+//                            }
+//                        }
+                        
+                        Divider()
+                        
+                        Button(role: .destructive) {
+                            authManager.authState = .loggedOut
+                        } label: {
+                            HStack(spacing: 0) {
+                                Text("Log out")
+                                Image(systemName: "rectangle.portrait.and.arrow.right")
+                            }
+                            .tint(.puce)
+                            .background(.charcoal)
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                            .foregroundStyle(.charcoal.opacity(0.8))
+                            .font(.title)
+                    }
+                }
+                .padding(.vertical)
+                
+                CustomTextField(placeholderText: "Search", color: .charcoal, text: $searchText)
+                    .background(.ivory)
+                    .padding(10)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 8.0)
+                            .strokeBorder(.charcoal.opacity(0.5), style: StrokeStyle(lineWidth: 1))
+                    }
+                
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
                         ForEach(0..<viewModel.notesList.count, id: \.self) { index in
                             NavigationLink(destination: NoteView(note: viewModel.notesList[index])) {
                                 NoteCardView(note: viewModel.notesList[index])
-                                    .frame(width: UIScreen.main.bounds.width * 0.45, height: 200)
+                                    .frame(width: UIScreen.main.bounds.width * 0.45, height: UIScreen.main.bounds.width * 0.45)
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
@@ -69,20 +120,6 @@ extension HomeView {
             
             Spacer()
             
-            Button(action: {
-                self.capturedImage = nil
-                self.extractedText = ""
-                self.extractTextFlag = false
-                self.isTextSaved = false
-                self.isCameraPresented = true
-            }) {
-                Image(systemName: "camera")
-                    .font(.system(size: 50))
-                    .padding()
-                    .background(.gold)
-                    .foregroundStyle(.white)
-                    .clipShape(.circle)
-            }
             .sheet(isPresented: $isCameraPresented, onDismiss: {
                 if capturedImage != nil {
                     extractTextFlag = true
@@ -95,9 +132,42 @@ extension HomeView {
                 ExtractTextView(sender: self, capturedImage: self.$capturedImage)
             }
         }
-        .navigationTitle("notExtract")
-        .navigationBarTitleDisplayMode(.automatic)
+        .navigationBarTitleDisplayMode(.inline)
         .padding()
+        .toolbar {
+            ToolbarItemGroup(placement: .bottomBar) {
+                Button {
+                    print("Load from image pressed!")
+                } label: {
+                    Image(systemName: "photo")
+                        .foregroundStyle(.charcoal)
+                }
+                
+                Spacer()
+                
+                Button {
+                    self.capturedImage = nil
+                    self.extractedText = ""
+                    self.extractTextFlag = false
+                    self.isTextSaved = false
+                    self.isCameraPresented = true
+                } label: {
+                    Image(systemName: "camera")
+                        .foregroundStyle(.gold)
+                        .font(.largeTitle)
+                        .padding()
+                }
+                
+                Spacer()
+                
+                Button {
+                    print("Create text note pressed!")
+                } label: {
+                    Image(systemName: "square.and.pencil")
+                        .foregroundStyle(.charcoal)
+                }
+            }
+        }
         .background(
             DotPattern(
                 backgroundColor: .ivory,
@@ -106,46 +176,6 @@ extension HomeView {
                 spacing: 7
             )
         )
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Menu {
-                    
-                    Button {
-                        print("Settings pressed!")
-                    } label: {
-                        HStack(spacing: 0) {
-                            Text("Settings")
-                            Image(systemName: "gearshape")
-                        }
-                    }
-                    
-                    Button {
-                        print("Profile pressed!")
-                    } label: {
-                        HStack(spacing: 0) {
-                            Text("Profile")
-                            Image(systemName: "person.crop.circle")
-                        }
-                    }
-                    
-                    Divider()
-                    
-                    Button(role: .destructive) {
-                        authManager.authState = .loggedOut
-                    } label: {
-                        HStack(spacing: 0) {
-                            Text("Log out")
-                            Image(systemName: "rectangle.portrait.and.arrow.right")
-                        }
-                        .tint(.puce)
-                        .background(.charcoal)
-                    }
-                } label: {
-                    Label("Menu", systemImage: "ellipsis.circle")
-                        .foregroundStyle(.charcoal)
-                }
-            }
-        }
     }
 }
 

@@ -13,7 +13,7 @@ class HomeViewModel: ObservableObject {
     @Published var notesList = [
         Note(title: "Title 1", text: "This is the text for Note 1", category: "Note", dateCreated: Date.now),
         Note(title: "Title 2", text: "This is the text for Note 2. It comprises of multiple lines for a better idea of the user interface.", category: "Note", dateCreated: Date.now),
-        Note(title: "Title 3", text: "This is the text for Note 1", category: "Note", dateCreated: Date.now)
+        Note(title: "Title 3", text: "This is the text for Note 3. It also has quite a bit of text, for testing purposes.", category: "Note", dateCreated: Date.now)
     ]
     
     func saveTextExtractedFromImage(text: String) {

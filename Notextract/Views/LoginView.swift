@@ -38,12 +38,6 @@ struct LoginView: View {
                     Spacer()
                     
                     withAnimation {
-//                        Image("notExtract")
-//                            .resizable()
-//                            .aspectRatio(contentMode: .fit)
-//                            .frame(width: 300, height: 300)
-//                            .offset(y: logoOffsetY)
-//                            .opacity(isFieldInFocus ? 0.0 : 1.0)
                         GIFView(name: "notextract_ascend")
                             .aspectRatio(contentMode: .fit)
                             .frame(height: 350)
