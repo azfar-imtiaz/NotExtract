@@ -57,7 +57,7 @@ struct CustomAvatar: View {
             )
             .overlay(
                 Circle()
-                    .stroke(colorScheme == .dark ? .white : .black, lineWidth: 2)
+                    .stroke(colorScheme == .dark ? .ivory : .charcoal, lineWidth: 2)
             )
     }
 }
@@ -67,6 +67,8 @@ struct CustomAvatar_Previews: PreviewProvider {
         CustomAvatar(
             imageURL: "https://example.com/your-avatar.png",
             fallbackText: "AB",
+            fallbackBgColor: .ivory,
+            fallbackFgColor: .charcoal,
             width: 100,
             height: 100
         )

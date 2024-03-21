@@ -59,12 +59,16 @@ extension HomeView {
                 HStack {
                     Text("NotExtract")
                         .font(.customFont("Amsterdam-Two_ttf", size: 30))
+                        .foregroundStyle(.gold)
                         .frame(height: 20)
                         .padding(.bottom)
                     Spacer()
                     Menu {
                         NavigationLink(destination: SettingsView()) {
-                            Text("Settings")
+                            HStack(spacing: 0) {
+                                Text("Settings")
+                                Image(systemName: "gearshape")
+                            }
                         }
                         
 //                        Button {

@@ -59,7 +59,7 @@ struct SettingsView: View {
             .padding()
             .background(.charcoal)
             .roundedCorner(12, corners: .allCorners)
-            .frame(width: UIScreen.main.bounds.width * 0.95)
+            .frame(width: UIScreen.main.bounds.width * 0.9)
             
             Spacer()
             
@@ -134,8 +134,8 @@ struct SettingsView: View {
             
             Spacer()
         }
+        .padding(.top, 50)
         .background(.ivory)
-        .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
