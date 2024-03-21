@@ -50,14 +50,14 @@ struct CustomAvatar: View {
             .fill(fallbackBgColor)
             .overlay(
                 Text(fallbackText)
-                    .font(.system(size: min(width, height) * 0.3))
+                    .font(.customFont("Amsterdam-Two_ttf", size: min(width, height) * 0.2))
                     .foregroundColor(fallbackFgColor)
                     .minimumScaleFactor(0.5) // Allows the text to scale down if needed
                     .padding()
             )
             .overlay(
                 Circle()
-                    .stroke(colorScheme == .dark ? .ivory : .charcoal, lineWidth: 2)
+                    .stroke(colorScheme == .dark ? .ivoryAlways : .charcoalAlways, lineWidth: 2)
             )
     }
 }

@@ -71,15 +71,6 @@ extension HomeView {
                             }
                         }
                         
-//                        Button {
-//                            print("Profile pressed!")
-//                        } label: {
-//                            HStack(spacing: 0) {
-//                                Text("Profile")
-//                                Image(systemName: "person.crop.circle")
-//                            }
-//                        }
-                        
                         Divider()
                         
                         Button(role: .destructive) {

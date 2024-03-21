@@ -27,9 +27,8 @@ struct SettingsView: View {
                             Text(email)
                                 .font(.customFont("LeagueSpartan-Regular", size: 16))
                                 .opacity(0.5)
-                            Button {
-                                print("Edit profile clicked!")
-                            } label: {
+                            
+                            NavigationLink(destination: ProfileView()) {
                                 HStack {
                                     Text("Edit profile")
                                         .font(.customFont("LeagueSpartan-Regular", size: 16))
@@ -136,6 +135,7 @@ struct SettingsView: View {
         }
         .padding(.top, 50)
         .background(.ivory)
+        .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
