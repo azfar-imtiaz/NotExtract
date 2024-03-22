@@ -9,6 +9,6 @@ target 'Notextract' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'GoogleUtilities'
-  pod 'GoogleMLKit/TextRecognition', '3.2.0'
+  # pod 'GoogleMLKit/TextRecognition', '3.2.0'
 
 end
