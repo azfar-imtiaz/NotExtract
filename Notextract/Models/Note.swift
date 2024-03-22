@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Note {
+class Note: Codable {
     let id          : UUID
     var title       : String
     var text        : String
@@ -21,6 +21,4 @@ class Note {
         self.category = category
         self.dateCreated = dateCreated
     }
-    
-    
 }

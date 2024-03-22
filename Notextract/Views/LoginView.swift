@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import AlertToast
 
 struct LoginView: View {
     
@@ -16,7 +17,6 @@ struct LoginView: View {
     
     @State private var logoOffsetY: CGFloat = 300
     @State private var loginSectionOffsetY: CGFloat = 500
-    // @State private var keyboardHeight: CGFloat = 0
     @State private var loginFieldsHeight: Double = 500
     @State private var isSignUpMode: Bool = false
     
@@ -26,6 +26,9 @@ struct LoginView: View {
     @State private var password  : String = ""
     @State private var repeatPassword : String = ""
     @State private var isLoading : Bool = false
+    
+    @State private var showSignUpFailureToast : Bool = false
+    @State private var signUpError : String = ""
     
     @FocusState private var isFieldInFocus: Bool
     
@@ -55,7 +58,6 @@ struct LoginView: View {
             .background(.ivoryAlways)
         }
         .frame(height: UIScreen.main.bounds.height)
-        // .onReceive(Publishers.keyboardHeight) { keyboardHeight = $0 }
         .onAppear {
             /*
             CODE SNIPPET FOR VIEWING ALL FONTS AND GETTING CORRECT NAMES
@@ -148,7 +150,6 @@ extension LoginView {
                     print("Sign up pressed!")
                     withAnimation {
                         isSignUpMode.toggle()
-                        // loginSectionOffsetY = isSignUpMode ? -300 : 0
                         loginFieldsHeight = isSignUpMode ? UIScreen.main.bounds.height : 500
                     }
                 } label: {
@@ -167,8 +168,6 @@ extension LoginView {
         .background(.charcoalAlways)
         .roundedCorner(30, corners: isSignUpMode ? [] : [.topLeft, .topRight])
         .offset(y: loginSectionOffsetY)
-        // .keyboardAdaptive()
-        // .padding(.bottom)
     }
     
     func signUpSection() -> some View {
@@ -222,7 +221,7 @@ extension LoginView {
                 .padding(.bottom, 10)
                 .focused($isFieldInFocus)
             
-            CustomSecureField(placeholderText: "Repeat password", color: .ivoryAlways, text: $password)
+            CustomSecureField(placeholderText: "Repeat password", color: .ivoryAlways, text: $repeatPassword)
                 .frame(minHeight: secureFieldHeight)
                 .underlineTextField(color: .ivoryAlways)
                 .padding()
@@ -236,15 +235,34 @@ extension LoginView {
             }
             
             Button {
-                print("Sign up successful!!")
+                isFieldInFocus = false
+                isLoading = true
+                authManager.signUp(firstName: firstName, lastName: lastName, email: username, password: password, repeatedPassword: repeatPassword) { error in
+                    if let error = error {
+                        signUpError = error.localizedDescription
+                        isLoading = false
+                        showSignUpFailureToast.toggle()
+                    } else {
+                        print("Sign up successful!!")
+                    }
+                }
             } label: {
-                Text("Sign up")
-                    .foregroundStyle(.ivoryAlways)
-                    .frame(width: 150)
-                    .font(.customFont("LeagueSpartan-Regular", size: 20))
-                    .padding()
-                    .background(.gold)
-                    .cornerRadius(5.0)
+                if isLoading {
+                    ProgressView()
+                        .tint(.charcoal)
+                        .frame(width: 150)
+                        .padding()
+                        .background(.gold)
+                        .roundedCorner(8, corners: .allCorners)
+                } else {
+                    Text("Sign up")
+                        .foregroundStyle(.ivoryAlways)
+                        .frame(width: 150)
+                        .font(.customFont("LeagueSpartan-Regular", size: 20))
+                        .padding()
+                        .background(.gold)
+                        .roundedCorner(8, corners: .allCorners)
+                }
             }
             
             HStack(spacing: .zero) {
@@ -257,7 +275,6 @@ extension LoginView {
                     print("Going back to login!")
                     withAnimation {
                         isSignUpMode.toggle()
-                        // loginSectionOffsetY = isSignUpMode ? -300 : 0
                         loginFieldsHeight = isSignUpMode ? UIScreen.main.bounds.height : 500
                     }
                 } label: {
@@ -279,6 +296,21 @@ extension LoginView {
         .offset(y: loginSectionOffsetY)
         .padding(.bottom)
         .background(.charcoalAlways)
+        .toast(isPresenting: $showSignUpFailureToast, duration: 2, tapToDismiss: true) {
+            AlertToast(
+                displayMode: .alert,
+                type: .error(.puce),
+                title: "Sign up failed!",
+                subTitle: signUpError,
+                style: AlertToast.AlertStyle.style(
+                    backgroundColor: .ivoryAlways,
+                    titleColor: .puce,
+                    subTitleColor: .charcoalAlways,
+                    titleFont: Font.customFont("LeagueSpartan-Regular", size: 18),
+                    subTitleFont: Font.customFont("LeagueSpartan-Regular", size: 15)
+                )
+            )
+        }
     }
 }
 
