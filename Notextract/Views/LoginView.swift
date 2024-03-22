@@ -16,7 +16,7 @@ struct LoginView: View {
     
     @State private var logoOffsetY: CGFloat = 300
     @State private var loginSectionOffsetY: CGFloat = 500
-    @State private var keyboardHeight: CGFloat = 0
+    // @State private var keyboardHeight: CGFloat = 0
     @State private var loginFieldsHeight: Double = 500
     @State private var isSignUpMode: Bool = false
     
@@ -55,7 +55,7 @@ struct LoginView: View {
             .background(.ivoryAlways)
         }
         .frame(height: UIScreen.main.bounds.height)
-        .onReceive(Publishers.keyboardHeight) { keyboardHeight = $0 }
+        // .onReceive(Publishers.keyboardHeight) { keyboardHeight = $0 }
         .onAppear {
             /*
             CODE SNIPPET FOR VIEWING ALL FONTS AND GETTING CORRECT NAMES
@@ -105,7 +105,9 @@ extension LoginView {
             
             Button {
                 print("Login pressed!")
-                isFieldInFocus = false
+                withAnimation {
+                    isFieldInFocus = false
+                }
                 isLoading = true
                 if !authManager.login(username: username, password: password) {
                     isLoading = false
@@ -159,7 +161,7 @@ extension LoginView {
         }
         .padding()
         .transition(.move(edge: .bottom))
-        .frame(height: loginFieldsHeight)
+        .frame(height: isFieldInFocus ? loginFieldsHeight + 100 : loginFieldsHeight)
         .background(.charcoalAlways)
         .roundedCorner(30, corners: isSignUpMode ? [] : [.topLeft, .topRight])
         .offset(y: loginSectionOffsetY)
