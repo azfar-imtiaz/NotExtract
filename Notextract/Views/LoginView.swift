@@ -40,7 +40,7 @@ struct LoginView: View {
                     withAnimation {
                         GIFView(name: "notextract_ascend")
                             .aspectRatio(contentMode: .fit)
-                            .frame(height: 350)
+                            .frame(height: UIScreen.main.bounds.height * 0.4)
                             .offset(y: logoOffsetY)
                             .opacity(isFieldInFocus ? 0.0 : 1.0)
                     }
@@ -86,6 +86,8 @@ extension LoginView {
                 .opacity(isFieldInFocus ? 0.0 : 1.0)
             
             CustomTextField(placeholderText: "Email", color: .ivoryAlways, text: $username)
+                .autocorrectionDisabled(true)
+                .textInputAutocapitalization(.none)
                 .frame(minHeight: secureFieldHeight)
                 .underlineTextField(color: .ivoryAlways)
                 .padding()
@@ -182,6 +184,7 @@ extension LoginView {
             
             HStack(spacing: 20) {
                 CustomTextField(placeholderText: "First name", color: .ivoryAlways, text: $firstName)
+                    .autocorrectionDisabled(true)
                     .underlineTextField(color: .ivoryAlways)
                     .foregroundStyle(.ivoryAlways)
                     .font(.customFont("LeagueSpartan-Regular", size: 20))
@@ -191,6 +194,7 @@ extension LoginView {
                 Spacer()
                 
                 CustomTextField(placeholderText: "Last name", color: .ivoryAlways, text: $lastName)
+                    .autocorrectionDisabled(true)
                     .underlineTextField(color: .ivoryAlways)
                     .foregroundStyle(.ivoryAlways)
                     .font(.customFont("LeagueSpartan-Regular", size: 20))
@@ -200,6 +204,8 @@ extension LoginView {
             .padding()
             
             CustomTextField(placeholderText: "Email", color: .ivoryAlways, text: $username)
+                .autocorrectionDisabled(true)
+                .textInputAutocapitalization(.none)
                 .underlineTextField(color: .ivoryAlways)
                 .padding()
                 .foregroundStyle(.ivoryAlways)

@@ -19,7 +19,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct NotextractApp: App {
     init() {
-        /* Properties for setting font type, size and color of navigation bar title */
+        /* PROPERTIES FOR SETTING FONT TYPE, SIZE AND COLOR OF NAVIGATION BAR TITLE */
         
         let appear = UINavigationBarAppearance()
         
@@ -36,13 +36,16 @@ struct NotextractApp: App {
         UINavigationBar.appearance().compactAppearance = appear
         UINavigationBar.appearance().scrollEdgeAppearance = appear
         
-        /* Properties for SegmentedPickerStyle */
+        /* PROPERTIES FOR SEGMENTEDPICKERSTYLE */
         
         UISegmentedControl.appearance().selectedSegmentTintColor = .gold
         UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont(name: "LeagueSpartan-Regular", size: 20) ?? .systemFont(ofSize: 20)], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont(name: "LeagueSpartan-Regular", size: 20) ?? .systemFont(ofSize: 20)], for: .normal)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.ivory], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.charcoal], for: .normal)
+        
+        /* FIREBASE CONFIGURATION */
+        // FirebaseApp.configure()
     }
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate

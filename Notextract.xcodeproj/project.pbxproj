@@ -31,6 +31,7 @@
 		26B1D8EB2BAB424800A885E9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1D8EA2BAB424800A885E9 /* SettingsView.swift */; };
 		26B1D8ED2BAB902E00A885E9 /* ColorSchemeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1D8EC2BAB902E00A885E9 /* ColorSchemeMode.swift */; };
 		26B1D8EF2BAB910200A885E9 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1D8EE2BAB910200A885E9 /* SettingsViewModel.swift */; };
+		26B1D8F12BAC922100A885E9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1D8F02BAC922100A885E9 /* ProfileView.swift */; };
 		26E8F7012B9500E600EC40F4 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E8F7002B9500E600EC40F4 /* NoteCardView.swift */; };
 		577CBAE66740E7C24ACB9871 /* Pods_Notextract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8100B5FC5968976D1E68025 /* Pods_Notextract.framework */; };
 		C19ABD842B97175E00103EF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD832B97175E00103EF4 /* GoogleService-Info.plist */; };
@@ -87,6 +88,7 @@
 		26B1D8EA2BAB424800A885E9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		26B1D8EC2BAB902E00A885E9 /* ColorSchemeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeMode.swift; sourceTree = "<group>"; };
 		26B1D8EE2BAB910200A885E9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		26B1D8F02BAC922100A885E9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		26E8F7002B9500E600EC40F4 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
 		2EF31779251D1555F8011A5D /* Pods-Notextract.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notextract.release.xcconfig"; path = "Target Support Files/Pods-Notextract/Pods-Notextract.release.xcconfig"; sourceTree = "<group>"; };
 		B8100B5FC5968976D1E68025 /* Pods_Notextract.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notextract.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +208,7 @@
 				26B1D8DD2BA2BE9C00A885E9 /* GIFView.swift */,
 				26B1D8E32BA33EC900A885E9 /* NoteView.swift */,
 				26B1D8EA2BAB424800A885E9 /* SettingsView.swift */,
+				26B1D8F02BAC922100A885E9 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				26E8F7012B9500E600EC40F4 /* NoteCardView.swift in Sources */,
 				2660D7D82B8E655700FF4716 /* HomeView.swift in Sources */,
 				C19ABD892B975C7500103EF4 /* RoundedCorner.swift in Sources */,
+				26B1D8F12BAC922100A885E9 /* ProfileView.swift in Sources */,
 				26B1D8E42BA33EC900A885E9 /* NoteView.swift in Sources */,
 				26B1D8D12BA0B38000A885E9 /* ExtractTextViewModel.swift in Sources */,
 				26101C702B8E89040064A2DB /* ExtractTextView.swift in Sources */,
