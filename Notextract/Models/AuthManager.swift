@@ -17,16 +17,60 @@ enum AuthState {
 class AuthManager: ObservableObject {
     @Published var authState: AuthState = .loggedOut
     
-    func login(username: String, password: String) -> Bool {
-        guard username.count > 0 && password.count > 0 else {
-            return false
+    func login(email: String, password: String, completion: @escaping (Error?) -> Void) {
+        guard validateEmail(email: email) else {
+            completion(NSError(
+                domain: "signup",
+                code: 401,
+                userInfo: [NSLocalizedDescriptionKey: "Please enter a valid email address"])
+            )
+            return
         }
-        // put login logic here
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.authState = .loggedIn
+        guard validatePassword(password: password) else {
+            completion(NSError(
+                domain: "signup",
+                code: 401,
+                userInfo: [NSLocalizedDescriptionKey: "The password should contain at least 6 characters"])
+            )
+            return
         }
-        return true
+        
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                completion(error)
+                return
+            } else if let authResult = authResult {
+                let userID = authResult.user.uid
+                let db = Firestore.firestore()
+                let userRef = db.collection("users").document(userID)
+                userRef.getDocument { document, error in
+                    if let error = error {
+                        completion(error)
+                        return
+                    }
+                    if let document = document, document.exists {
+                        do {
+                            let user = try document.data(as: User.self)
+                            print("\(user.firstName) \(user.lastName) has logged in!")
+                            self.authState = .loggedIn
+                        } catch {
+                            completion(NSError(
+                                domain: "login",
+                                code: 401,
+                                userInfo: [NSLocalizedDescriptionKey: "Error decoding user data."])
+                            )
+                        }
+                    } else {
+                        completion(NSError(
+                            domain: "login",
+                            code: 401,
+                            userInfo: [NSLocalizedDescriptionKey: "Error retrieving user data."])
+                        )
+                    }
+                }
+            }
+        }
     }
     
     func logout() {

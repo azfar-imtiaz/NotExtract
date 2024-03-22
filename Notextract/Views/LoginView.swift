@@ -22,13 +22,16 @@ struct LoginView: View {
     
     @State private var firstName : String = ""
     @State private var lastName  : String = ""
-    @State private var username  : String = ""
+    @State private var email     : String = ""
     @State private var password  : String = ""
     @State private var repeatPassword : String = ""
     @State private var isLoading : Bool = false
     
     @State private var showSignUpFailureToast : Bool = false
     @State private var signUpError : String = ""
+    
+    @State private var showSignInFailureToast : Bool = false
+    @State private var signInError : String = ""
     
     @FocusState private var isFieldInFocus: Bool
     
@@ -87,15 +90,16 @@ extension LoginView {
                 .padding(.bottom, 30)
                 .opacity(isFieldInFocus ? 0.0 : 1.0)
             
-            CustomTextField(placeholderText: "Email", color: .ivoryAlways, text: $username)
+            CustomTextField(placeholderText: "Email", color: .ivoryAlways, text: $email)
                 .autocorrectionDisabled(true)
-                .textInputAutocapitalization(.none)
+                .textInputAutocapitalization(.never)
+                .textContentType(.emailAddress)
                 .frame(minHeight: secureFieldHeight)
                 .underlineTextField(color: .ivoryAlways)
                 .padding()
                 .foregroundStyle(.ivoryAlways)
                 .font(.customFont("LeagueSpartan-Regular", size: 20))
-                .padding(.bottom, 20)
+                .padding(.bottom, 10)
                 .focused($isFieldInFocus)
             
             CustomSecureField(placeholderText: "Password", color: .ivoryAlways, text: $password)
@@ -108,14 +112,16 @@ extension LoginView {
                 .focused($isFieldInFocus)
             
             Button {
-                print("Login pressed!")
-                withAnimation {
-                    isFieldInFocus = false
-                }
+                isFieldInFocus = false
                 isLoading = true
-                if !authManager.login(username: username, password: password) {
-                    isLoading = false
-                    print("Login failed!")
+                authManager.login(email: email, password: password) { error in
+                    if let error = error {
+                        signInError = error.localizedDescription
+                        isLoading = false
+                        showSignInFailureToast.toggle()
+                    } else {
+                        print("Login successful!")
+                    }
                 }
             } label: {
                 if isLoading {
@@ -168,6 +174,21 @@ extension LoginView {
         .background(.charcoalAlways)
         .roundedCorner(30, corners: isSignUpMode ? [] : [.topLeft, .topRight])
         .offset(y: loginSectionOffsetY)
+        .toast(isPresenting: $showSignInFailureToast, duration: 2, tapToDismiss: true) {
+            AlertToast(
+                displayMode: .alert,
+                type: .error(.puce),
+                title: "Login failed!",
+                subTitle: signInError,
+                style: AlertToast.AlertStyle.style(
+                    backgroundColor: .ivoryAlways,
+                    titleColor: .puce,
+                    subTitleColor: .charcoalAlways,
+                    titleFont: Font.customFont("LeagueSpartan-Regular", size: 18),
+                    subTitleFont: Font.customFont("LeagueSpartan-Regular", size: 15)
+                )
+            )
+        }
     }
     
     func signUpSection() -> some View {
@@ -202,9 +223,10 @@ extension LoginView {
             }
             .padding()
             
-            CustomTextField(placeholderText: "Email", color: .ivoryAlways, text: $username)
+            CustomTextField(placeholderText: "Email", color: .ivoryAlways, text: $email)
                 .autocorrectionDisabled(true)
-                .textInputAutocapitalization(.none)
+                .textInputAutocapitalization(.never)
+                .textContentType(.emailAddress)
                 .underlineTextField(color: .ivoryAlways)
                 .padding()
                 .foregroundStyle(.ivoryAlways)
@@ -237,7 +259,7 @@ extension LoginView {
             Button {
                 isFieldInFocus = false
                 isLoading = true
-                authManager.signUp(firstName: firstName, lastName: lastName, email: username, password: password, repeatedPassword: repeatPassword) { error in
+                authManager.signUp(firstName: firstName, lastName: lastName, email: email, password: password, repeatedPassword: repeatPassword) { error in
                     if let error = error {
                         signUpError = error.localizedDescription
                         isLoading = false
