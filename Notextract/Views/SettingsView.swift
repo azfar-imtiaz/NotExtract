@@ -8,23 +8,28 @@
 import SwiftUI
 
 struct SettingsView: View {
-    private var name: String = "Azfar Imtiaz"
-    private var email: String = "azfar.imtiaz@live.com"
-    
     @StateObject var viewModel = SettingsViewModel()
+    @EnvironmentObject var userStore: UserStore
     
     var body: some View {
         VStack {
             VStack {
                 HStack(spacing: 20) {
-                    CustomAvatar(imageURL: "nil", fallbackText: "AI", fallbackBgColor: .ivory, fallbackFgColor: .charcoal, width: 110, height: 110)
-                        .padding(.trailing)
+                    CustomAvatar(
+                        imageURL: "nil",
+                        fallbackText: "\(userStore.loggedInUser?.firstName.first ?? "U")\(userStore.loggedInUser?.lastName.first ?? "U")",
+                        fallbackBgColor: .ivory,
+                        fallbackFgColor: .charcoal,
+                        width: 110,
+                        height: 110
+                    )
+                    .padding(.trailing)
                     
                     VStack(alignment: .leading, spacing: 15) {
-                        Text(name)
+                        Text("\(userStore.loggedInUser?.firstName ?? "Unknown") \(userStore.loggedInUser?.lastName ?? "User")")
                             .font(.customFont("LeagueSpartan-Bold", size: 25))
                         VStack(alignment: .leading, spacing: 5) {
-                            Text(email)
+                            Text("\(userStore.loggedInUser?.email ?? "Unknown email address")")
                                 .font(.customFont("LeagueSpartan-Regular", size: 16))
                                 .opacity(0.5)
                             
@@ -47,6 +52,7 @@ struct SettingsView: View {
                 
                 HStack(spacing: 0) {
                     Text("Member since ")
+                    // TODO: Fix this with joiningDate from userStore.loggedInUser.joiningDate
                     Text(.now, style: .date)
                     
                     Spacer()

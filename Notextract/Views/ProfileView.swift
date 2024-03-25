@@ -8,19 +8,24 @@
 import SwiftUI
 
 struct ProfileView: View {
-    let firstName: String = "Azfar"
-    let lastName: String = "Imtiaz"
-    let email: String = "azfar.imtiaz@live.com"
-    
     @State var firstNameUpdated: String = ""
     @State var lastNameUpdated: String = ""
+    @EnvironmentObject var userStore: UserStore
     
     @FocusState private var isFieldFocused: Bool
     
     var body: some View {
         VStack {
             ZStack {
-                CustomAvatar(imageURL: "nil", fallbackText: "AI", fallbackBgColor: .ivory, fallbackFgColor: .charcoal, width: 150, height: 150)
+                CustomAvatar(
+                    imageURL: "nil",
+                    fallbackText: "\(userStore.loggedInUser?.firstName.first ?? "U")\(userStore.loggedInUser?.lastName.first ?? "U")",
+                    fallbackBgColor: .ivory,
+                    fallbackFgColor: .charcoal,
+                    width: 150,
+                    height: 150
+                )
+                
                 Button {
                     print("Edit photo pressed!")
                 } label: {
@@ -41,13 +46,13 @@ struct ProfileView: View {
             .padding()
             .opacity(isFieldFocused ? 0.0 : 1.0)
             
-            Text("\(firstName) \(lastName)")
+            Text("\(userStore.loggedInUser?.firstName ?? "Unknown") \(userStore.loggedInUser?.lastName ?? "User")")
                 .font(.customFont("LeagueSpartan-Bold", size: 25))
                 .foregroundStyle(.charcoal)
                 .padding(.bottom, 10)
                 .opacity(isFieldFocused ? 0.0 : 1.0)
             
-            Text(email)
+            Text("\(userStore.loggedInUser?.email ?? "Unknown email address")")
                 .font(.customFont("LeagueSpartan-Regular", size: 16))
                 .foregroundStyle(.charcoal)
                 .opacity(0.5)
@@ -66,7 +71,7 @@ struct ProfileView: View {
                 .foregroundStyle(.charcoal)
                 .padding()
                 
-                CustomTextField(placeholderText: firstName, color: .charcoal, text: $firstNameUpdated)
+                CustomTextField(placeholderText: userStore.loggedInUser?.firstName ?? "Unknown", color: .charcoal, text: $firstNameUpdated)
                     .underlineTextField(color: .charcoal)
                     .foregroundStyle(.charcoal)
                     .font(.customFont("LeagueSpartan-Regular", size: 20))
@@ -82,7 +87,7 @@ struct ProfileView: View {
                 .foregroundStyle(.charcoal)
                 .padding()
                 
-                CustomTextField(placeholderText: lastName, color: .charcoal, text: $lastNameUpdated)
+                CustomTextField(placeholderText: userStore.loggedInUser?.lastName ?? "User", color: .charcoal, text: $lastNameUpdated)
                     .underlineTextField(color: .charcoal)
                     .foregroundStyle(.charcoal)
                     .font(.customFont("LeagueSpartan-Regular", size: 20))
