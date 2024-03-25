@@ -49,10 +49,12 @@ struct NotextractApp: App {
     }
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    let userStore = UserStore()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(userStore)
         }
     }
 }

@@ -11,7 +11,14 @@ import AlertToast
 
 struct LoginView: View {
     
+    @EnvironmentObject var userStore: UserStore
     @ObservedObject var authManager: AuthManager
+    @ObservedObject var viewModel: LoginViewModel
+    
+    init(authManager: AuthManager) {
+        self.authManager = authManager
+        self.viewModel = LoginViewModel(authManager: authManager)
+    }
     
     @ScaledMetric(relativeTo: .body) private var secureFieldHeight: CGFloat = 22
     
@@ -114,13 +121,18 @@ extension LoginView {
             Button {
                 isFieldInFocus = false
                 isLoading = true
-                authManager.login(email: email, password: password) { error in
-                    if let error = error {
+                viewModel.login(email: email, password: password) { result in
+                    switch result {
+                    case .success(let user):
+                        userStore.loggedInUser = user
+                    case .failure(let error):
                         signInError = error.localizedDescription
                         isLoading = false
                         showSignInFailureToast.toggle()
-                    } else {
-                        print("Login successful!")
+                    default:
+                        signInError = "An unknown error occurred."
+                        isLoading = false
+                        showSignInFailureToast.toggle()
                     }
                 }
             } label: {
@@ -259,13 +271,18 @@ extension LoginView {
             Button {
                 isFieldInFocus = false
                 isLoading = true
-                authManager.signUp(firstName: firstName, lastName: lastName, email: email, password: password, repeatedPassword: repeatPassword) { error in
-                    if let error = error {
+                viewModel.signUp(firstName: firstName, lastName: lastName, email: email, password: password, repeatPassword: repeatPassword) { result in
+                    switch result {
+                    case .success(let user):
+                        userStore.loggedInUser = user
+                    case .failure(let error):
                         signUpError = error.localizedDescription
                         isLoading = false
                         showSignUpFailureToast.toggle()
-                    } else {
-                        print("Sign up successful!!")
+                    default:
+                        signUpError = "An unknown error occurred."
+                        isLoading = false
+                        showSignUpFailureToast.toggle()
                     }
                 }
             } label: {

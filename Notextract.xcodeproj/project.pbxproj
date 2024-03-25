@@ -35,6 +35,7 @@
 		26B1D8F52BADB95500A885E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1D8F42BADB95500A885E9 /* User.swift */; };
 		26B1D8F72BADC19F00A885E9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1D8F62BADC19F00A885E9 /* StringExtension.swift */; };
 		26B1D8F92BADC6EF00A885E9 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1D8F82BADC6EF00A885E9 /* EncodableExtension.swift */; };
+		26B1D8FC2BAF60EC00A885E9 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1D8FB2BAF60EC00A885E9 /* UserStore.swift */; };
 		26E8F7012B9500E600EC40F4 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E8F7002B9500E600EC40F4 /* NoteCardView.swift */; };
 		577CBAE66740E7C24ACB9871 /* Pods_Notextract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8100B5FC5968976D1E68025 /* Pods_Notextract.framework */; };
 		C19ABD842B97175E00103EF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C19ABD832B97175E00103EF4 /* GoogleService-Info.plist */; };
@@ -96,6 +97,7 @@
 		26B1D8F42BADB95500A885E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		26B1D8F62BADC19F00A885E9 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		26B1D8F82BADC6EF00A885E9 /* EncodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
+		26B1D8FB2BAF60EC00A885E9 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		26E8F7002B9500E600EC40F4 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
 		2EF31779251D1555F8011A5D /* Pods-Notextract.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notextract.release.xcconfig"; path = "Target Support Files/Pods-Notextract/Pods-Notextract.release.xcconfig"; sourceTree = "<group>"; };
 		B8100B5FC5968976D1E68025 /* Pods_Notextract.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notextract.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +181,7 @@
 		2660D7C62B8E651400FF4716 /* Notextract */ = {
 			isa = PBXGroup;
 			children = (
+				26B1D8FA2BAF60B500A885E9 /* Classes */,
 				C19ABD8F2B976E5100103EF4 /* Fonts */,
 				C19ABD8A2B975CF400103EF4 /* Extensions */,
 				C19ABD872B975C6100103EF4 /* Shapes */,
@@ -223,9 +226,7 @@
 		2660D7D62B8E654800FF4716 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2660D7DB2B8E657200FF4716 /* CameraCoordinator.swift */,
 				26AF81912B9B4B75004BAAC0 /* Note.swift */,
-				26B1D8D22BA1CC2300A885E9 /* AuthManager.swift */,
 				26B1D8EC2BAB902E00A885E9 /* ColorSchemeMode.swift */,
 				26B1D8F42BADB95500A885E9 /* User.swift */,
 			);
@@ -238,6 +239,16 @@
 				26B1D8E82BAAA5BE00A885E9 /* amsterdam-two.ttf */,
 			);
 			path = AmsterdamTwo;
+			sourceTree = "<group>";
+		};
+		26B1D8FA2BAF60B500A885E9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				26B1D8D22BA1CC2300A885E9 /* AuthManager.swift */,
+				2660D7DB2B8E657200FF4716 /* CameraCoordinator.swift */,
+				26B1D8FB2BAF60EC00A885E9 /* UserStore.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		A32B0478C55BCBF99E223638 /* Pods */ = {
@@ -473,6 +484,7 @@
 				26B1D8D32BA1CC2300A885E9 /* AuthManager.swift in Sources */,
 				26E8F7012B9500E600EC40F4 /* NoteCardView.swift in Sources */,
 				26B1D8F92BADC6EF00A885E9 /* EncodableExtension.swift in Sources */,
+				26B1D8FC2BAF60EC00A885E9 /* UserStore.swift in Sources */,
 				26B1D8F52BADB95500A885E9 /* User.swift in Sources */,
 				2660D7D82B8E655700FF4716 /* HomeView.swift in Sources */,
 				C19ABD892B975C7500103EF4 /* RoundedCorner.swift in Sources */,
